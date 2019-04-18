@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var arr=[11,33,22,44,66,55];
+    function mySort(dates,callback){
+      for (var tang=1; tang<=dates.length-1; tang++){
+        for(var count=1; count<=dates.length-tang; count++){
+          if (callback(dates[count-1],dates[count])>0){
+            var temp=dates[count-1];
+            dates[count-1]=dates[count];
+            dates[count]=temp;
+          }
+       
+        }
+      }
+
+    }
+    mySort(arr,function(a,b){
+      return b-a;
+    })
+    console.log(arr);
+    
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

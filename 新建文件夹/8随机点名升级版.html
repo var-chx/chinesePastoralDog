@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: #000;
+      color: yellow;
+      line-height: 200px;
+      font-size: 40px;
+      margin: 10px auto;
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <button>开始</button>
+  <div>随机点名</div>
+  <script>
+    userName=["周云涛", "胡雪云", "汤德昆", "楚汉祥", "巴云腾", "张瑞", "李天琪", "臧善琪", "杨涛", "张沛方", "田浩", "王帅", "谷二丽", "杨爽", "原瑞娜", "王伟娇", "张莹", "韩苏杰", "李祥", "李尚奇", "宋世君", "陈武亮", "佟鑫", "迪二云", "牛佳悦", "徐润涛", "赵扬莉", "王健", "张雪茜", "刘赟姿", "安照东", "贾轲", "韩璐", "罗蔓", "宋嫚", "卢艳辉", "刘婷", "魏国庆", "任李伟", "王鹏菊", "赵良川", "杨京诚", "娜荷芽", "张丹", "廖晓琴", "侯星晨", "王瑞乾", "吴珊", "乔俐阳", "高雪", "刘鹏", "圣正杰", "李信巢", "李杰", "范国茂", "冯敏", "徐丹", "金晨曦", "刘小龙", "王景", "白楠", "赵俊杰", "刘修伯", "赵少达", "杨俊驰", "郭小霞", "苗发旺", "白欣", "尚光阔", "夏华", "魏新袖", "赵胜羽", "杨占锋", "赵山山", "樊伟东", "王袭昊", "张子龙", "孙耀威", "郭秦良", "亓玉", "刘甜甜", "李厚磊", "许锦花", "白瑞龙", "陈莹莹"]
+    var bNode=document.querySelector('button');
+    var dNode=document.querySelector('div');
+    var flag;
+    bNode.onclick=function(){
+      if(bNode.innerHTML=='开始'){
+        bNode.innerHTML='停止';
+        flag=setInterval(function(){
+          var index=parseInt(Math.random()*userName.length);
+          dNode.innerHTML=userName[index];
+        },50)
+
+      }
+      else {
+        bNode.innerHTML='开始';
+        clearInterval(flag);
+      }
+    }
+
+  
+  
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*setInterval(callback,time);
+    参数  
+    callback 函数
+    time 毫秒单位1000=1s
+    功能  每隔time时间后,会执行callback里的代码
+    返回值:数字,代表当前的定时器
+    清除setInterval产生的定时器:clearInterval(代表当前定时器的那个数字);
+
+    */
+    var count=1;
+    var r=setInterval(function(){
+      // console.log('报告'+count);
+      console.log(r);
+      count++;
+    },1000);
+   
+
+  
+  </script>
+</head>
+<body>
+  <button onclick="clearInterval(r)">停止按钮</button>
+  
+</body>
+</html>

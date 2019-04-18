@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var arr=['张三丰','张无忌','赵敏','周芷若','灭绝师太','逍遥子','虚竹','段誉','段正淳'];
+    // alert(arr.indexOf('张无忌'));
+    // arr.splice(1,0);
+    // console.log(arr);
+    // while (true) {
+    //   var f=confirm('你确定要删除一个人吗?');
+    //   if(f){
+    //     var n=prompt('请输入要删除的名字?');
+    //     var index=arr.indexOf(n);
+    //     if(index==-1){
+    //       alert('该用户不存在');
+    //     }
+    //     else {
+    //       arr.splice(index,1);
+    //       alert('删除成功!');
+    //     }
+    //   }
+    //   else{
+    //     break;
+    //   }
+    // }
+    // console.log(arr);
+    while(true){
+      var f=confirm('您确定要删除一个人吗?');
+      if(f){
+        var n=prompt('请输入名字');
+        var index=arr.indexOf(n);
+        if(index==-1){
+          alert('该用户不存在');
+        }
+        else {
+          arr.splice(index,1);
+          alert('删除成功!');
+        }
+
+      }
+      else{
+        break;
+      }
+    }
+    document.write(arr);
+
+
+  
+
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

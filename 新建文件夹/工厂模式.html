@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function createHero(n,a){
+    var obj=new Object();
+    obj.name=n;
+    obj.age=a;
+    obj.attack =function (yg){
+      console.log(this.name + '向' +yg +'发动攻击.... ');
+    }
+    return obj;
+    }
+    var wukong=createHero('孙悟空',500);
+    var pig=createHero('猪八戒',400);
+    var fish = createHero('沙和尚',200);
+    wukong.attack('嫦娥');
+    pig.attack('牛魔王');
+    fish.attack('出汗想');
+   
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

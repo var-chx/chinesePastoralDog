@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: darkred;
+      font-size: 40px;
+      color: white;
+      margin: 10px auto;
+      line-height: 200px;
+
+    }
+  
+  </style>
+</head>
+<body>
+  <button>开始</button>
+  <div>随机点名</div>
+  <script>
+    userNames=['小猫','小狗','小猪','小鸭','小鸡','小熊猫'];
+    var bNode=document.querySelector('button');
+    var dNode=document.querySelector('div');
+    var flag;
+    bNode.onclick =function(){
+      if(bNode.innerHTML=='开始'){
+        bNode.innerHTML='停止';
+        flag=setInterval(function(){
+          var index=parseInt(Math.random()*userNames.length);
+          dNode.innerHTML=userNames[index];
+        },50);
+      }
+      else {
+        bNode.innerHTML='开始';
+        clearInterval(flag);
+      }
+    }
+   
+
+  </script>
+  
+</body>
+</html>

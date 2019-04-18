@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function getFormet(time) {
+      var date =time;
+      var year=date.getFullYear();
+      var month=date.getMonth();
+      var day=date.getDate();
+      var hours=date.getHours();
+      var minutes=date.getMinutes();
+      var seconds=date.getSeconds();
+      // if (month<10){
+      //   month="0" +month;
+      // }
+      // 三元表达式
+      month=month<10? '0'+month:month;
+      day=day<10? '0'+day:day;
+      hours=hours<10? '0'+hours:hours;
+      minutes=minutes<10? '0'+minutes:minutes;
+
+
+      var str=year +'/' +month +'/' +day +'  ' +hours+':' + minutes +':'+seconds;
+      return str;
+
+    }
+    var obj=new Date('2019-02-05 12:2:12 ');
+    var timestr=getFormet(obj);
+    console.log(timestr);
+
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

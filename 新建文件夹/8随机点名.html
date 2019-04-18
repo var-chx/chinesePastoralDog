@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+
+    }
+    div  {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+      color: red;
+      font-size: 40px;
+      line-height: 200px;
+      margin: 10px auto;
+      
+    }
+  
+  </style>
+</head>
+<body>
+  <button>点名</button>
+  <div>随机点名</div>
+  <script>
+    userName=['小猫','小狗','小猪','小鸭','小鸡','小熊猫'];
+    var bNode=document.querySelector('button');
+    var dNode=document.querySelector('div');
+    console.dir(dNode);
+    bNode.onclick=function() {
+      var index= parseInt(Math.random()*userName.length);
+      dNode.innerHTML=userName[index];
+      
+     
+
+    }
+
+
+  
+  
+  </script>
+  
+</body>
+</html>

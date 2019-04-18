@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <input type="checkbox">
+  <script>
+    var inputNode=document.querySelector('input');
+    console.dir(inputNode.checked);
+    inputNode.checked=true;
+    console.dir(inputNode);
+  </script> -->
+  <p>
+    <input  id="all" type="checkbox">全选
+  </p>
+  <ul>
+    <li><input type="checkbox">西游记</li>
+    <li><input type="checkbox">红楼梦</li>
+    <li><input type="checkbox">三国演义</li>
+    <li><input type="checkbox">水浒传</li>
+  </ul>
+  <script>
+    var allNode=document.getElementById('all');
+    var inputsNode=document.querySelectorAll('ul input');
+    console.log(inputsNode);
+    allNode.onchange=function(){
+      var flag=allNode.checked;
+      console.log(flag);
+      for(var i=0; i<inputsNode.length;i++){
+      inputsNode[i].checked = flag;
+    }
+    }
+    
+
+
+
+
+  </script>
+  
+</body>
+</html>

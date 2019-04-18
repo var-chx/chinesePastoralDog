@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /*setTimeout(callback,time);
+    参数:
+    callback 函数
+    time 毫秒单位 
+    功能  : 等time时间后,会执行callback里的代码,只执行一次;
+    返回值 数字,代表当前的定时器
+    清除setTimeout所产生的定时器:clearTimeout(代表定时器的那个数字);
+    */
+    var r=setTimeout(function(){
+      alert('报告');
+    },3000);
+    console.log(r);
+    // var a=setTimeout(function(){
+    //   alert('报告');
+    // },1000);
+    // console.log(a);
+  
+  
+
+
+  
+  
+  </script>
+</head>
+<body>
+  <button onclick="clearTimeout(r)">停止定时器</button>
+  
+</body>
+</html>

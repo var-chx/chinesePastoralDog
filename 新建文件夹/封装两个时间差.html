@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 功能 计算任意两个时间差
+    // start 开始时间
+    // end 结束时间
+    function getDiff(start,end){
+      var startDate=start;
+      var endDate=end;
+      var totalMs=endDate.getTime()-startDate.getTime();
+      // console.log(totalMs);
+      var hours=parseInt(totalMs/1000/60/60);
+      var minutes=parseInt(totalMs/1000/60%60);
+      var seconds=parseInt(totalMs/1000%60);
+      // var str=hours +':' +minutes+':' +seconds;
+      // return str;
+      // var arr=[hours,minutes,seconds]
+      // return arr;
+      var obj={h:hours,m:minutes,s:seconds}
+      return obj;
+      
+      
+    }
+    var s=new Date();
+    var e=new Date('2019-4-15 20:20:20')
+    var r=getDiff(s,e);
+    console.log(r);
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

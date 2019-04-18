@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="subtract">-</button>
+  <input id="content" type="text" value="1" readonly>
+  <button id="add">+</button>
+  <script>
+    var subtractNode=document.getElementById('subtract');
+    var contentNode=document.getElementById('content');
+    var addNode=document.getElementById('add');
+    addNode.onclick=function(){
+      var v=contentNode.value;
+      contentNode.value=Number(v)+1;
+
+      
+    }
+    subtractNode.onclick=function(){
+
+      var v=contentNode.value;
+      var v2=v-1;
+
+      // if(v<2){
+      //   contentNode.value=1;
+      // }
+      if(v2<=0){
+        v2=1;
+      }
+      contentNode.value=v2;
+     
+    }
+  
+  </script>
+  
+</body>
+</html>

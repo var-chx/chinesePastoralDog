@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      height: 50px;
+    }
+
+    span.time {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: darkred;
+      text-align: center;
+      line-height: 50px;
+      font: bold 22px/50px '微软雅黑';
+      color: azure;
+
+    }
+    span.sp {
+      font: bold 22px/50px '微软雅黑';
+      margin: 0 5px;
+    }
+
+  
+  
+  
+  
+  </style>
+</head>
+<body>
+  <div>
+    <span class="time">00</span>
+    <span class="sp">:</span>
+    <span class="time">00</span>
+    <span class="sp">:</span>
+    <span class="time">00</span>
+    <script>
+      function getDiff(endtime,starttime) {
+        var time=endtime.getTime()-starttime.getTime();
+        var h=parseInt(time/1000/60/60);
+        var m=parseInt(time/1000/60%60);
+        var s=parseInt(time/1000%60);
+        h=h<10? '0'+h:h;
+        m=m<10? '0'+m:m;
+        s=s<10? '0'+s:s;
+        return {
+          hours:h,
+          minutes:m,
+          seconds:s
+        }
+      }
+
+      var spansNode=document.querySelectorAll('.time');
+      // console.log(spansNode);
+      var e=new Date('2019-4-18  16:44:44');
+      setInterval(function(){
+        var s=new Date();
+        var obj=getDiff(e,s);
+        console.log(obj);
+        spansNode[0].innerHTML=obj.hours;
+        spansNode[1].innerHTML=obj.minutes;
+        spansNode[2].innerHTML=obj.seconds;
+
+      },1000)
+
+    
+
+
+
+      
+    
+    
+    
+    </script>
+
+
+  </div>
+  
+</body>
+</html>

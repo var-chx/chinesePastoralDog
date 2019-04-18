@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // this指向当前所创建的对象
+    function Hero (n,a){
+      this.name=n;
+      this.age=a;
+      console.log(this);
+
+    }
+    // 构造函数调用
+    var wukong= new Hero('孙悟空',400);
+    var pig=new Hero('猪八戒',500);
+    var fish=new Hero('沙和尚',600);
+    // 普通函数调用
+    Hero('武警',50);
+
+    
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

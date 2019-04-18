@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var str='我爱你一万年';
+    var r=str.charAt(4);
+    console.log(r);
+
+    var str2='我abc';
+    var n=str2.charCodeAt(0);
+    console.log(n);
+
+    // concat()拼接作用
+    var a='我爱你';
+    var b='一万年'; 
+    var c=a.concat(b);
+    console.log(c);
+
+
+    // slice(s,e)  截取
+    var str3='我爱你一万年';
+    var str4=str3.slice(1,3);
+    console.log(str4);
+    var str5=str3.substring(1,3);
+    console.log(str5);
+    var str6=str3.substr(1,3);
+    console.log(str6);
+    var wen=str3.slice(2);
+    console.log(wen);
+
+    // indexOf() 返回的是位置的下标
+    var str7='无敌是多么的寂寞,无敌是多么的空虚';
+    var str8=str7.indexOf('的');
+    console.log(str8);
+    var str9=str7.indexOf('寂寞的你');
+    console.log(str9);
+    var str0=str7.lastIndexOf('无敌');
+    console.log(str0);
+
+
+    // trim()  返回去掉两边空格后的字符串
+    var  num='    我爱你     ';
+    console.log(num);
+    var num1=num.trim();
+    console.log(num1);
+
+
+    // toUpperCase()  转换为大写
+    // toLowerCase()   转换为小写
+    // var num2=prompt('请输入你的验证码ABCD');
+    // if(num2.toLowerCase()==='abcd'){
+    //   alert('验证码正确');
+    // }
+    // else {
+    //   alert('验证码错误');
+    // }
+
+
+    // replace(newStr,oldStr);不会改变字符串本身,而是返回替换后的新的字符串
+    var num3='你真牛,棒棒哒';
+    var num4=num3.replace('牛','棒');
+    console.log(num4);
+    var num5=num3.replace('棒','爱');
+    console.log(num5);
+
+
+    var num6='你好你好你好你好你好你好你好';
+    while(true){
+      var index=num6.indexOf('你');
+      if(index!=-1){
+        num6=num6.replace('你','我');
+      }
+      else{
+        break;
+      }
+    }
+    console.log(num6);
+
+    // split('字符'); 返回的是一个数组
+    var names='张三&李四&王五';
+    var newnames=names.split('&');
+    console.log(newnames);
+    var nnames=newnames.join('%');
+    console.log(nnames);
+
+
+    var chu=['zhang','guan','li'];
+    var chu2=chu.join('999');
+    console.log(chu2);
+
+
+
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

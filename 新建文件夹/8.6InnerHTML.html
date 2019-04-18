@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+      font-size: 50px;
+      font-family: "宋体";
+      color: green;
+      margin: 0 auto;
+      line-height: 200px;
+      text-align: center;
+      font-weight: 600;
+
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- <div>张三</div> -->
+  <div>
+    <p>张三</p>
+  </div>
+  <script>
+    var dNode=document.querySelector('div');
+    console.dir(dNode);
+    // alert(dNode.innerHTML);
+    // dNode.innerHTML='李四';
+    alert(dNode.innerText);
+
+  
+  </script>
+  
+</body>
+</html>

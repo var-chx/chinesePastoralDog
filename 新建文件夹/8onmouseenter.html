@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    
+  
+  </script>
+</head>
+<body>
+  <div id="box">
+    <img src="01.jpg" alt="">
+  </div>
+  <script>
+    // 1 获取所有操作的节点对象   div节点对象 图片节点对象
+    var divNode =document.getElementById('box');
+    var imgNode=document.getElementsByTagName('img')[0];
+
+
+    // 2 给div绑定事件(鼠标进入  鼠标离开)
+    divNode.onmouseenter= function() {
+      imgNode.src="02.jpg";
+
+      // alert('鼠标进入');
+    }
+    divNode.onmouseleave=function() {
+      imgNode.src="01.jpg"
+      // alert('鼠标离开');
+    }
+    // 3 鼠标进入事件中, 改变图片的路径
+
+    // 4 鼠标离开时 ,改变图片的路径
+    
+
+    
+  
+  </script>
+ 
+  
+</body>
+</html>

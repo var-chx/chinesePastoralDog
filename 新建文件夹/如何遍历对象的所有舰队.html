@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // for in 遍历
+    var obj= {
+      name:'孙悟空',
+      age:76,
+      gender:'男',
+    };
+    for(var key in obj){
+      console.log(key + '--------------' + obj[key]);
+    }
+    // key 代表对象中的键名
+    var People=new Object();
+    People.name='孙悟空';
+    People.age=600;
+    People.gender='女';
+    for(var key in People) {
+      console.log(key + '--------------' +People[key]);
+    }
+
+    
+
+
+
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

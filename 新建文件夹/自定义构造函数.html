@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    function Hero(n,a){
+      this.name=n;
+      this.age=a;
+      this.attack =function (yg){
+        console.log(this.name + '向' +yg + '发动攻击');
+      }
+
+    }
+    var wukong=new Hero('孙悟空',500);
+    var pig=new Hero('猪八戒',400);
+    var fish=new Hero('沙河双',300);
+    wukong.attack('牛魔王');
+    pig.attack('小月月'); 
+    fish.attack('sunwukong');
+
+    // instanceof 判断类型
+    console.log(document instanceof Hero);
+    console.log(wukong instanceof Hero);
+    console.log(pig instanceof Hero);
+    console.log(fish instanceof Hero);
+
+    
+
+   
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
