@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      background-color: #ccc;
+    }
+  
+  </style>
+</head>
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+  <button>按钮5</button>
+  <button>按钮6</button>
+  <button>按钮7</button>
+  <button>按钮8</button>
+  <button>按钮9</button>
+  <button>按钮10</button>
+
+  <script>
+    // 获取一组按钮对象 伪数组
+    var btnNode=document.getElementsByTagName('button');
+    // 循环遍历一组节点对象,给每一个绑定点击事件
+    for(var index=0; index<btnNode.length; index++){
+      btnNode[index].xiabiao=index;
+      btnNode[index].onclick=function(){
+        // alert(this.innerHTML);
+        console.dir(this.xiabiao);
+        // 第一种方法
+        // btnNode[0].style.backgroundColor="#ccc";
+        // btnNode[1].style.backgroundColor="#ccc";
+        // btnNode[2].style.backgroundColor="#ccc";
+        // btnNode[3].style.backgroundColor="#ccc";
+        // btnNode[4].style.backgroundColor="#ccc";
+        // btnNode[5].style.backgroundColor="#ccc";
+        // btnNode[6].style.backgroundColor="#ccc";
+        // btnNode[7].style.backgroundColor="#ccc";
+        // btnNode[8].style.backgroundColor="#ccc";
+        // btnNode[9].style.backgroundColor="#ccc";
+        // 第二种方法
+        for(var i=0; i<btnNode.length;i++){
+          btnNode[i].style.backgroundColor='#ccc';
+        }
+        this.style.backgroundColor='pink';
+      }
+
+    }
+    // console.log(index);
+  
+  
+  </script>
+
+  
+</body>
+</html>

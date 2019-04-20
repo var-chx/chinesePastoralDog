@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input id="ing" type="text" placeholder="12345">
+  <button id="ong">发送验证码</button>
+  <script>
+    var ingNode=document.getElementById('ing');
+    var ongNode=document.getElementById('ong');
+    var seconds=5;
+    var num;
+
+
+    ongNode.onclick=function(){
+      num=setInterval(function(){
+        ongNode.disabled=true;
+        console.log(seconds);
+        ongNode.innerHTML='(' + seconds +')重新发送验证码';
+        seconds--;
+        
+        if(seconds<0){
+          clearInterval(num);
+          ongNode.innerHTML='发送验证码';
+          seconds=5;
+          ongNode.disabled=false;
+        }
+      },1000)
+    }
+  </script>
+
+  
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" value="12345">
+  <button >发送验证码</button>
+  <script>
+    // 节点对想.disabled=true  表示禁用
+    var btnNode=document.querySelector('button');
+    var seconds=5;
+    var num;
+    btnNode.onclick=function(){
+      // console.dir(btnNode);
+      // btnNode.disabled=true;
+      num=setInterval(function(){
+        btnNode.disabled=true;
+        console.log(seconds);
+        btnNode.innerHTML='(' +  seconds +')秒后重新发送';
+        seconds--;
+        
+        
+        if(seconds<0){
+        clearInterval(num);
+        btnNode.disabled=false;
+        btnNode.innerHTML='发送验证码';
+        seconds=5;
+       
+        }
+
+
+      },1000)
+      
+
+    }
+
+  
+  </script>
+
+  
+</body>
+</html>

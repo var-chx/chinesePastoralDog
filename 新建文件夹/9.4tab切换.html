@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body,ul,li,img {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      text-align: center;
+      list-style: none;
+      float: left;
+      width: 183px;
+      height: 30px;
+      background-color: #ccc;
+      line-height: 30px;
+    }
+    .container {
+      width: 918px;
+      height: 480px;
+      margin: 0 auto;
+      background-color: pink;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="tab">
+      <ul class="tab-control">
+        <!-- 切换按钮 -->
+          <li class="active2">疯狂抢购</li>
+          <li>热卖推荐</li>
+          <li>猜你喜欢</li>
+          <li>新品上架</li>
+          <li>整箱特卖</li>
+      </ul>
+      <!-- 切换区域 -->
+      <div class="tab-content">
+          <div class="tab-content-item active">
+              <img src="01.bmp"/>
+          </div>
+          <div class="tab-content-item">
+              <img src="02.bmp"/>
+          </div>
+          <div class="tab-content-item">
+              <img src="03.bmp"/>
+          </div>
+          <div class="tab-content-item">
+              <img src="04.bmp"/>
+          </div>
+          <div class="tab-content-item">
+              <img src="05.bmp"/>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var lisNode=document.querySelectorAll('.container ul li');
+    var divNode=document.querySelectorAll('.container .tab-content .tab-content-item');
+    for(var index=0; index<lisNode.length; index++){
+      lisNode[index].xiabiao=index;
+      lisNode[index].onclick=function(){
+        for(var j=0; j<lisNode.length;j++){
+          lisNode[j].style.backgroundColor="red";
+          lisNode[j].style.color="yellow";
+          lisNode[j].style.fontWeight='400';
+          divNode[j].style.display="none";
+        }
+        this.style.backgroundColor='green';
+        this.style.color="darkred";
+        this.style.fontWeight='700';
+        console.log(divNode[this.xiabiao]);
+        divNode[this.xiabiao].style.display='block';
+
+      }
+    }
+
+
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

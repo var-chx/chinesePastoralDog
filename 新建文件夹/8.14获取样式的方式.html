@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+   div {
+     width: 100px;
+     height: 100px;
+     background-color: rgb(255,192,203);
+   }
+  
+  </style>
+</head>
+<body>
+  <div  style="width:100px"></div>
+  <script>
+    
+    var divNode=document.querySelector('div');
+    // 这两种方法值使用与行内样式
+    // console.log(divNode.style.width);
+    // console.log(divNode.style['width']);
+    // var styleNode=getComputedStyle(divNode,null);
+    // console.dir(styleNode);
+    // console.log(styleNode.width);
+    function getStyle(node){
+      var styleNode;
+      if(node.currentStyle==undefined){
+        styleNode=getComputedStyle(node,null);
+      }
+      else {
+        styleNode=divNode.currentStyle;
+      }
+      return styleNode;
+    }
+    var styleObj=getStyle(divNode);
+    console.log(styleObj.width);
+    console.log(styleObj.backgroundColor);
+    </script>
+  
+</body>
+</html>

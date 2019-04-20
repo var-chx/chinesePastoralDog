@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img {
+      width: 100px;
+
+    }
+  
+  </style>
+</head>
+<body>
+  <img  id="photo" src="01.jpg" alt="">
+  <button id="btn">变大</button>
+  <script>
+    function getStyle(node){
+      var styleNode;
+      if(node.currentStyle==undefined){
+        styleNode=getComputedStyle(node,null);
+      }
+      else {
+        styleNode=node.currentStyle;
+      }
+      return styleNode;
+
+    }
+    /* 节点对象.style.样式属性=值;
+    节点对象.style['样式属性']=值;
+    */
+    var photoNode=document.querySelector('#photo');
+    var btnNode=document.querySelector('#btn');
+    btnNode.onclick=function(){
+      var styleObj=getStyle(photoNode);
+      var w=parseInt(styleObj.width);
+      console.log(w);
+      photoNode.style.width= w + 10 +'px';
+
+    }
+
+  </script>
+  
+</body>
+</html>
