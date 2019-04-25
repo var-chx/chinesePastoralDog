@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 30px;
+
+    
+    }
+    .box1 {
+      background-color: red;
+    }
+    .box2 {
+      margin-top: 300px;
+      
+      
+      background-color: blue;
+    }
+    .box3 {
+      background-color: yellow;
+      margin-top: 500px;
+    }
+  
+  
+  
+  
+  </style>
+</head>
+<body>
+  <button>开始</button>
+  <div class="box1">div1</div>
+  <div class="box2">div2</div>
+  <div class="box3">div3</div>
+
+
+  <script>
+    var btnNode=document.querySelector('button');
+    var box1=document.querySelector('.box1');
+    var box2=document.querySelector('.box2');
+    var box3=document.querySelector('.box3');
+
+    // 封装动画
+    // var node.flag;
+    function animate(node,attr,targetValue,speed){
+      clearInterval(node.flag);
+      node.flag=setInterval(function(){
+        var v1=parseInt(getStyle(node,attr));
+        if (v1==targetValue){
+          clearInterval(node.flag);
+          return;
+        }
+        else {
+          var v2=v1 + 10;
+          node.style[attr]= v2 +'px';
+        }
+      },speed)
+
+    }
+    function getStyle(node,attr){
+      var  styleNode;
+      if (node.currentStyle){
+        styleNode=node.currentStyle;
+      }
+      else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode[attr];
+    }
+    btnNode.onclick=function(){
+      animate(box1,'left',800,100);
+      animate(box2,'width',800,50);
+      animate(box3,'height',800,10);
+
+    }
+  
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

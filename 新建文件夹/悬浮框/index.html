@@ -20,6 +20,10 @@
     .box2 {
       height: 107px;
     }
+    .box2.active {
+      position: fixed;
+      top: 0;
+    }
 
   
   
@@ -30,7 +34,7 @@
     <div class="box1">
       <img src="01.png" alt="">
     </div>
-    <div class="box2">
+    <div class="box2" id='box2'>
       <img src="02.png" alt="">
     </div>
     <div class="box3">
@@ -40,6 +44,27 @@
       <img src="04.png" alt="">
     </div>
   </div>
+  <script>
+    var  box2=document.querySelector('#box2');
+    var v1=box2.offsetTop;
+    var body=document.querySelector('body');
+    window.onscroll=function(){
+      var v2=document.documentElement.scrollTop||document.body.scrolllTop;
+      if(v2>v1){
+        box2.className='box2 active';
+      }
+      else {
+        box2.className='box2';
+      }
+
+
+    }
+
+
+
+  
+  
+  </script>
   
 </body>
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+  
+  
+  </style>
+</head>
+<body>
+ 
+  <div></div>
+  <script> 
+    
+   
+   
+    var flag;
+   
+    // attr=styleName
+
+    function animate(node,attr,targetValue){
+      clearInterval(node.flag);
+      node.flag=setInterval(function(){
+       
+        var v1=parseInt(getStyle(node,attr));
+        if(v1==targetValue){
+          clearInterval(node.flag);
+          return;
+        }
+        var v2=v1+10;
+        node.style[attr]=v2 + 'px';
+
+      },10)
+
+    }
+
+
+// 封装样式
+    function getStyle(node,attr){
+      var styleNode;
+      if (node.currentStyle){
+        styleNode=node.currentStyle;
+      }
+      else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode[attr];
+    }
+    var divNode=document.querySelector('div');
+    // alert(getStyle(divNode,'width'));
+    animate(divNode,'left',800);
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>
