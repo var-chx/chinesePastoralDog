@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body,textarea,ul {
+      padding: 0;
+      margin: 0;
+    }
+    ul  {
+      list-style: none;
+    }
+    i {
+      font-style: normal;
+    }
+    .box {
+      padding: 20px;
+      width: 600px;
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      
+      text-align: center;
+    }
+    textarea {
+      width: 500px;
+      height: 150px;
+      font-size: 16px;
+      resize: none;
+    }
+    .control {
+      text-align: right;
+      padding-right: 50px;
+    }
+    .control i {
+      padding: 0 5px;
+    }
+    .control .current{
+      color: red;
+    }
+    .control .total {
+      color: #ccc;
+    }
+    .control button {
+      width: 100px;
+      height: 30px;
+    }
+    #commentList {
+      margin: 0 auto;
+      width: 500px;
+      background-color: beige;
+      text-align: left;
+    }
+    #commentList li {
+      border-bottom: 1px dotted #ccc;
+      padding: 10px 5px;
+
+    }
+    #commentList .del {
+      text-align: right;
+      text-decoration: underline;
+    }
+    #commentList span {
+      color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <textarea placeholder="说点什么吧,,,,," maxlength="200" ></textarea>
+    <div class="control">
+      <span>
+        <i class="current">0</i>/<i class="total">200</i>
+        <button class="add">发表</button>
+      </span>
+    </div>
+    <ul  id="commentList">
+      <li>
+        <div>哈哈哈</div>
+        <div class="del">
+          <span>删除</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    var textareaNode=document.querySelector('textarea');
+    // 0
+    var currentNode=document.querySelector('.current');
+    // 200
+    var totalNode=document.querySelector('.total');
+    var addNode=document.querySelector('.add');
+    var ulNode=document.querySelector('#commentList');
+    textareaNode.onkeydown=function(){
+      var contentValue=this.value;
+      var contentlen=contentValue.length;
+      currentNode.innerHTML=contentlen;
+      totalNode.innerHTML=200-contentlen;
+    }
+    addNode.onclick=function(){
+      var contentValue=textareaNode.value;
+      var li=document.createElement('li');
+      var div1=document.createElement('div');
+      
+      div1.innerHTML=contentValue;
+
+      li.appendChild(div1);
+      var div2=document.createElement('div');
+
+      div2.className='del';
+      var span=document.createElement('span');
+      span.innerHTML='删除';
+      div2.appendChild(span);
+      li.appendChild(div2);
+      ulNode.appendChild(li);
+    }
+
+    // 事件委托方式给ul所有的span绑定事件
+    ulNode.onclick=function(e){
+      var _e=window.event||e;
+      var _etarget=_e.target||_e.srcElement;
+      if (_etarget.tagName.toLowerCase()=="span"){
+        var li =_etarget.parentNode.parentNode;
+        ulNode.removeChild(li);
+      }
+    }
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  </script>
+
+  
+</body>
+</html>

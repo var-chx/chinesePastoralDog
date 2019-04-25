@@ -1,0 +1,62 @@
+/*初始化样式*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/*版心*/
+.container {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+/*侧边栏整体模块样式*/
+.sidebar {
+  /*相对定位*/
+  position: relative;
+}
+
+/*侧边栏左侧模样式*/
+.sidebar > .sideLeft {
+  width: 190px;
+  background-color: #666;
+  padding: 10px 0;
+}
+
+.sidebar > .sideLeft li {
+  padding-left: 20px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.sidebar > .sideLeft li.active {
+  background-color: #aaa;
+}
+
+.sidebar > .sideLeft li a {
+  color:#fff;
+}
+.sidebar > .sideLeft li a:hover {
+  color:red;
+}
+
+/*京东侧边栏右侧模块*/
+.sidebar>.sideRight {
+  position: absolute;
+  top:0;
+  left: 190px;
+}
+.sidebar>.sideRight .item{
+  display: none;
+}
+.sidebar>.sideRight .item.active {
+  display: block;
+}
+

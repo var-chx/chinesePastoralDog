@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+
+    }
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: #999;
+      position: absolute;
+      cursor: move;
+      border: 1px solid red;
+
+
+    }
+  
+  </style>
+</head>
+<body>
+  <div>draftingdraftingdraftingdraftingdrafting</div>
+  <script>
+    var divNode=document.querySelector('div');
+    divNode.onmousedown= function(e){
+      var _e=window.event||e;
+      var offsetXValue=_e.offsetX;
+      var offsetYValue=_e.offsetY;
+      document.onmousemove= function(el){
+        var _el=window.event||el;
+        var clientXValue=_el.clientX;
+        var clientYValue=_el.clientY;
+        var x=clientXValue-offsetXValue;
+        var y=clientYValue-offsetYValue;
+        divNode.style.left=x+'px';
+        divNode.style.top=y +'px';
+      }
+    }
+    window.getSelection().removeAllRanges();
+    
+    divNode.onmouseup=function(ell){
+      var _ell=window.event||ell;
+      // console.dir(document);
+      document.onmousemove=null;
+
+    }
+
+    
+    
+  
+  
+  
+  </script>
+  
+</body>
+</html>

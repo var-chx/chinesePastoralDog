@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: black;
+    }
+    img {
+      width: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+    }
+    img.active {
+      transform: rotateY(180deg);
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <img src="xiaoniao.png"  id="photo" class="active" alt="">
+  <script>
+    // 封装nodestyle
+    function getStyle(node){
+      var styleNode;
+      if(node.currentStyle!=undefined){
+        styleNode=node.currentStyle;
+      }
+      else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode;
+    }
+
+
+
+    var imgNode=document.querySelector('#photo');
+    var step=5;
+    document.onkeydown=function(e){
+      var styleNode=getStyle(imgNode);
+      var currentStyle=parseInt(styleNode.left);
+      var currentStyleT=parseInt(styleNode.top);
+
+
+      var _e=window.event||e;
+      switch(_e.keyCode){
+        case 37:
+        // alert('左');
+        imgNode.className="active";
+        imgNode.style.left=currentStyle-step +'px';
+        break;
+        case 38:
+        // alert('上');
+        imgNode.style.top=currentStyleT-step +'px';
+
+        break;
+        case 39:
+        // alert('右');
+        imgNode.className="";
+        // var styleNode=getStyle(imgNode);
+        // var currentStyle=parseInt(styleNode.left);
+        // alert(currentStyle);
+        imgNode.style.left=step +currentStyle +'px';
+        break;
+        case 40:
+        // alert('下');
+        imgNode.style.top=step +currentStyleT +'px';
+        break;
+      }
+
+
+
+
+
+    }
+
+    
+
+   
+    
+
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

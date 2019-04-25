@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>按钮</button>
+  <script>
+    var btnNode=document.querySelector('button');
+    function  addEvent(node,type,fn){
+      if(node.addEventListener==undefined){
+        node.attachEvent('on' +type,fn);
+      }
+       else{
+        node.addEventListener(type,fn);
+      }
+    }
+
+    addEvent(btnNode,'click',function(){
+      alert(2);
+    })
+    addEvent(btnNode,'click',function(){
+      alert(3);
+    })
+     
+    
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

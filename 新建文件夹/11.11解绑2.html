@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  
+  </style>
+</head>
+<body>
+  <button>绑定</button>
+  <button>解绑</button>
+  <div></div>
+  <script>
+    var btn1=document.querySelectorAll('button')[0];
+    var btn2=document.querySelectorAll('button')[1];
+    var divNode=document.querySelector('div');
+    var fn1=function(){
+      alert(1);
+    }
+    var fn2=function(){
+      alert(2);
+    }
+
+    btn1.onclick=function(){
+      divNode.addEventListener('click',fn1);
+      divNode.addEventListener('click',fn2);
+    }
+    btn2.onclick=function(){
+      // 一般
+      // divNode.removeEventListener('click',fn1);
+      // ie解绑
+      divNode.detachEvent('onclick',fn1);
+    }
+
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>
