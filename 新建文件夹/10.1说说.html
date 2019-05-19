@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,ul{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        i {
+            font-style: normal;
+        }
+        .box {
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            
+            border: 1px solid #ccc;
+        }
+        .box textarea {
+            width: 500px;
+            height: 150px;
+            resize: none;
+            font-size: 16px;
+        }
+        .control {
+            text-align: right;
+            padding-right: 47px;
+        }
+        .control i {
+            padding: 0 5px;
+
+        }
+        .control i.current {
+            color: red;
+        }
+        .control i.total{
+            color: #ccc;
+        }
+        .control button {
+            width: 100px;
+            height: 30px;
+        }
+        #commentList {
+            width: 506px;
+            background-color: beige;
+           /* text-align: left; */
+            margin: 0 auto;
+        }
+        #commentList li {
+            width: 100%;
+            border-bottom: 1px dotted #ccc;
+            padding: 10px 0;
+            text-align: left;
+            
+        }
+      
+        #commentList li div.del {
+            text-align: right;
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <textarea placeholder="说点什么吧"></textarea>
+        <div class="control">
+            <span>
+                <i class="current">0</i>/<i class="total">200</i>
+            </span>
+            <button id="add">发表</button>
+        </div>
+        <ul id="commentList">
+            <li>
+                <div>哈哈哈</div>
+                <div class="del">
+                    <span>删除</span>   
+                </div>
+            </li>
+            <li>
+                <div>哈和呃呃呃鹅鹅鹅鹅鹅鹅饿</div>
+                <div  class="del">
+                    <span>删除</span>   
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // 1获取节点对象
+        var textareaNode=document.querySelector('textarea');
+        var addNode=document.getElementById('add');
+        var currentNode=document.querySelector('.current');
+        var totalNode=document.querySelector('.total');
+        var ulNode=document.querySelector('#commentList');
+        // 给文本域节点对象绑定oninput事件
+        textareaNode.oninput= function(){
+            var contentValue= this.value;
+            // console.log(contentValue);
+            var currentlen = contentValue.length;
+            currentNode.innerHTML= currentlen;
+            // var totalvalue=totalNode.innerHTML;
+            totalNode.innerHTML=200-currentlen;
+        }
+        addNode.onclick= function(){
+            var content=textareaNode.value;
+            var li=document.createElement('li');
+            // li.innerHTML=content;
+            var div1=document.createElement('div');
+            div1.innerHTML=content;
+            li.appendChild(div1);
+            var div2=document.createElement('div');
+            div2.className='del';
+            var span=document.createElement('span');
+            span.innerHTML='删除';
+            div2.appendChild(span);
+            li.appendChild(div2);
+            ulNode.appendChild(li);
+            // textareaNode.value='';
+            span.onclick= function(){
+            // alert(1);
+            var currentli=this.parentNode.parentNode;
+            // ulNode.removeChild(currentli);
+            li.remove();
+        }
+        }
+        
+        
+
+
+
+    
+    
+    </script>
+    
+</body>
+</html>

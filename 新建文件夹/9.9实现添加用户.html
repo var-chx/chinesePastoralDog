@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .userInfo {
+            border: 1px solid blue;
+            text-align: center;
+        }
+        table {
+            width: 600px;
+            border-collapse:collapse;
+            background-color: pink;
+            margin: 10px auto;
+        }
+        table th,table td {
+            border: 1px solid;
+            text-align: center;
+        }
+        table th {
+            padding: 20px 0;
+            background-color: darkcyan;
+            border-color: cornflowerblue;
+            color: gold;
+        }
+        table td {
+            padding: 10px 0;
+            background-color: deepskyblue;
+            border-color: aquamarine;
+        }
+        table tr:hover td {
+            background-color: aquamarine;
+            color: red;
+        }
+
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div  class="userInfo">
+        <p>
+            <label for="">用户名：<input type="text" id="username" ></label>
+        </p>
+        <p>
+            <label for="">学　号：<input type="text" id="num"></label>
+        </p>
+        <p>
+            <label for="">年　龄：<input type="text" id="age"></label>
+        </p>
+        <p>
+            <button id="add">添加</button>
+        </p>
+    </div>
+    <div class="userlist">
+        <table>
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>学号</th>
+                    <th>年龄</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>10010</td>
+                    <td>17</td>
+                    <td>2016/10/10 22:22:22</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>10010</td>
+                    <td>17</td>
+                    <td>2016/10/10 22:22:22</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>10010</td>
+                    <td>17</td>
+                    <td>2016/10/10 22:22:22</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function getFormat(time){
+            var date=time;
+            var year=date.getFullYear();
+            var month=date.getMonth() +1;
+            var day=date.getDate();
+            var hours=date.getHours();
+            var minutes=date.getMinutes();
+            var seconds=date.getSeconds();
+            month=month<10? '0'+month:month;
+            day=day<10? '0'+day:day;
+            hour=hours<10? '0'+hours:hours;
+            minute=minutes<10? '0'+minutes:minutes;
+            seconds=seconds<10? '0'+seconds:seconds;
+
+            var str=year +'/' +month + '/' +day+' '+hour+':' +minute +':'+seconds;
+            return str;
+        }
+
+        var usernameNode=document.getElementById('username');
+        var numNode=document.getElementById('num');
+        var ageNode=document.getElementById('age');
+        var addNode=document.getElementById('add');
+        var tbodyNode=document.querySelector('tbody');
+        // console.dir(usernameNode);
+        // console.dir(numNode);
+        // console.dir(ageNode);
+        addNode.onclick=function(){
+            var usernameValue=usernameNode.value;
+            var numValue=numNode.value;
+            var ageValue=ageNode.value;
+
+            var trNode=document.createElement('tr');
+            var date=new Date();
+            var datearr=getFormat(date);
+            trNode.innerHTML="<td>" +usernameValue +'</td>' +
+                            "<td>" +numValue +'</td>'+
+                            "<td>" +ageValue +'</td>'+
+                            "<td>" +datearr +'</td>'
+                            console.log(trNode);
+            tbodyNode.appendChild(trNode);
+            usernameNode.value='';
+            numNode.value="";
+        }
+        
+
+    
+    
+    
+    
+    </script>
+
+
+    
+</body>
+</html>

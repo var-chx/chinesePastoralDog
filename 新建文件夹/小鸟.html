@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="01.jpg" id="photo"  class="active" alt="">
+    <script>
+        document.onkeydown= function(e) {
+            var _e=window.event||e;
+            // alert(_e.keyCode);
+            switch (_e.keyCode) {
+                case 37:
+                alert('上');
+                break;
+                case 38:
+                alert('下');
+                break;
+                case 39:
+                alert("左");
+                break;
+                case 40:
+                alert("有");
+                break;
+
+
+
+            }
+
+
+        }
+
+    
+    
+    
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="你猜猜看">
+    <script>
+        var input=document.querySelector('input');
+        input.onfocus= function(){
+            input.style.backgroundColor="black";
+            input.style.color="white";
+        }
+        input.onblur= function(){
+            input.style.backgroundColor="white";
+            input.style.color="red";
+        }
+    
+    
+    
+    </script>
+    
+</body>
+</html>

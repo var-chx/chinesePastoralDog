@@ -22,8 +22,20 @@
 
     var ulNode=document.querySelector('.box');
     console.log(ulNode);
+    // 包括空白文本
     var ul3=ulNode.childNodes;
+    // 不包括空白文本
+    // var ul3=ulNode.children;
+    // alert(document.nodeType);
     console.log(ul3);
+    var arr=[];
+    for(var i=0; i<ul3.length;i++){
+      // console.log(ul3[i].nodeType);
+      if(ul3[i].nodeType=='1'){
+        arr.push(ul3[i]);
+      }
+    }
+    console.log(arr);
 
   
   </script>

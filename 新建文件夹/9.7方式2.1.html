@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            background-color: yellow;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮</button>
+    <ul>
+        <li>我是110</li>
+        <li>我是111</li>
+        <li>我是112</li>
+        <li>我是113</li>
+        <li>我是114</li>
+        <li>我是115</li>
+        <li>我是116</li>
+        <li>我是117</li>
+        <li>我是118</li>
+        <li>我是119</li>
+        <li>我是1110</li>
+        
+    </ul>
+    <script>
+        var lis=document.querySelectorAll('ul li');
+        for(var i=0;i<lis.length;i++){
+            lis[i].onclick=function(){
+                alert(this.innerHTML);
+            }
+        }
+        var btnNode=document.querySelector('button');
+        var ul=document.querySelector('ul');
+        btnNode.onclick=function(){
+            ul.innerHTML=ul.innerHTML +'<li>666</li>';
+        }
+
+    </script>
+    
+</body>
+</html>

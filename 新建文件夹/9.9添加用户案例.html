@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .userInfo {
+            text-align: center;
+            border: 1px solid blue;
+        }
+
+        table  {
+            margin: 10px auto;
+            width: 600px;
+            background-color: pink;
+            text-align: center;
+            border-collapse:collapse;
+        }
+        table th,table td {
+            border: 1px solid black;
+
+        }
+        table th {
+            padding: 20px 0;
+            background-color: darkcyan;
+            color: gold; 
+            border-color:  cornflowerblue;
+        }
+        table td {
+            padding: 10px 0;
+            background-color: deepskyblue;
+            border-color: aquamarine;
+            
+        }
+        table tr:hover td{
+            color: red;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div  class="userInfo">
+            <p>
+                <label for="">用户名：<input type="text" id="username" ></label>
+            </p>
+            <p>
+                <label for="">学　号：<input type="text" id="num"></label>
+            </p>
+            <p>
+                <label for="">年　龄：<input type="text" id="age"></label>
+            </p>
+            <p>
+                <button id="add">添加</button>
+            </p>
+    </div>
+    <div class="userlist">
+        <table>
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>学号</th>
+                    <th>年龄</th>
+                    <th>时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>10010</td>
+                    <td>17</td>
+                    <td>2016/10/10 22:22:22</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>10010</td>
+                    <td>17</td>
+                    <td>2016/10/10 22:22:22</td>
+                </tr>
+                <tr>
+                    <td>李四</td>
+                    <td>10010</td>
+                    <td>17</td>
+                    <td>2016/10/10 22:22:22</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function Format(time){
+            var date=time;
+            var y=date.getFullYear();
+            var m=date.getMonth() +1;
+            var d=date.getDate();
+            var h=date.getHours();
+            var i=date.getMinutes();
+            var s=date.getSeconds();
+            m=m<10? '0'+m:m;
+            d=d<10? '0'+d:d;
+            h=h<10? '0'+h:h;
+            i=i<10? '0'+i:i;
+            s=s<10? '0'+s:s;
+
+            var str=y +'/'+m +'/' +d +' '+h +':'+i +':'+s;
+            return str;
+        }
+
+        var usernameNode=document.getElementById("username");
+        var numNode=document.getElementById('num');
+        var ageNode=document.getElementById('age');
+        var addNode=document.getElementById('add');
+        var tbodyNode=document.querySelector('tbody');
+
+        addNode.onclick=function(){
+            var usernameValue=usernameNode.value;
+            var numValue=numNode.value;
+            var ageValue=ageNode.value;
+            var date=new Date();
+            var datearr=Format(date);
+            console.log(datearr);
+            var trNode=document.createElement('tr');
+
+            trNode.innerHTML='<td>' + usernameValue + '</td>' +
+                            '<td>' + numValue + '</td>' +
+                            '<td>' + ageValue + '</td>' +
+                            '<td>' + datearr + '</td>' 
+            console.log(trNode);
+            tbodyNode.appendChild(trNode);
+            usernameNode.value="";
+
+                                
+
+        }
+    
+    
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>
