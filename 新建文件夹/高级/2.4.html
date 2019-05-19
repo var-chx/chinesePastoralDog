@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    Array.prototype.mysort=function(){
+      // var arr=[20,34,45,66,78,89,89];
+      for (var i=0; i<this.length-1; i++){
+        for (var j=0; j<this.length-1-i; j++){
+          if(this[j]>this[j+1]){
+          var temp=this[j];
+          this[j]=this[j+1];
+          this[j+1]=temp;
+          }
+        }
+      }
+    }
+    var arr=[20,34,45,66,78,89,89];
+    arr.mysort();
+    console.log(arr);
+
+    Array.prototype.mysort=function(){
+      for(var i=0;i<this.length-1; i++){
+        for(var j=0;j<this.length-1-i; j++){
+          if(this[j]>this[j+1]){
+            var temp=this[j];
+            this[j]=this[j+1];
+            this[j+1]=temp;
+          }
+        }
+      }
+    }
+    var arr=[34,35,6,78,99,95,583];
+    arr.mysort();
+    console.log(arr);
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

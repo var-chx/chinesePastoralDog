@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // function f1(){
+    //   console.log(this);
+    // }
+    
+    // var ff=f1.bind();
+    // // 不是调用时复制
+    // ff();
+  
+    // f1(); 调用
+    // f1.call(null); 借用
+    // f1.apply(null);  借用
+
+    // function f1(){
+    //   console.log(this);
+    // }
+    
+    // var ff=f1.bind(null);
+    // // 不是调用时复制
+    // ff();
+
+    // function Person(age){
+    //   this.age = age;
+    // }
+    // Person.prototype.eat = function(){
+    //   console.log(this);
+    // }
+    // var per = new Person;
+    // // per.eat();
+    // var  obj={
+    //   sex:'男'
+    // };
+    // var ff=per.eat.bind(obj);
+    // ff();
+
+    // function f1 (){
+    //   console.log(this);
+    // }
+    // function Person (age){
+    //   this.age = age;
+    // };
+    // var per = new Person(10);
+    // var ff=f1.bind(per);
+    // ff();
+
+    function f1(x,y){
+      console.log(x +y);
+    }
+    function Person(age){
+      this.age = age;
+    }
+    var per =new Person(10);
+    var f=f1.bind(per);
+    f(20,30);
+
+
+
+
+
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

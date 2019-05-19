@@ -41,8 +41,9 @@
           clearInterval(node.flag);
           return;
         }
-        var v2=v1+10;
-        node.style[attr]=v2 + 'px';
+        var v1=v1+10;
+        console.log(v1);
+        node.style[attr]=v1 + 'px';
 
       },10)
 
@@ -62,7 +63,7 @@
     }
     var divNode=document.querySelector('div');
     // alert(getStyle(divNode,'width'));
-    animate(divNode,'left',800);
+    animate(divNode,'left',50);
   
   
   

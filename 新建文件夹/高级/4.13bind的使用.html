@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Show(){
+      this.num=parseInt(Math.random()*10)+1;
+    }
+    Show.prototype.show1= function(){
+      setInterval(function(){
+        (this.show2.bind(this))
+
+      },1000);
+    }
+    Show.prototype.show2=function(){
+      console.log(this.num);
+
+    }
+    var sr=new Show();
+    sr.show1();
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

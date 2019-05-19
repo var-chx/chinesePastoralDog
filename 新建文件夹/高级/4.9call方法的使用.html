@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // function f1(){
+    //   console.log(this);
+    // }
+    // f1 ();
+    // f1.call();
+    // function Person(age){
+    //   this.age = age;
+    // };
+    // function Student(sex){
+    //   this.sex = sex;
+    // }
+    // var per = new Person(100);
+    // f1.call(per);
+    // var cc=new Student('男');
+    // f1.call(cc);
+
+    function Person(age){
+      this.age = age;
+    }
+    Person.prototype.sayHi= function(){
+      console.log(this);
+    }
+    var cc=new Person(100);
+    console.log(cc);
+    cc.sayHi();
+
+
+    function Student (name){
+      // Person.call(this,age);
+      this.name = name;
+    }
+
+    var a=new Student('男');
+    cc.sayHi.apply(a);
+   
+
+
+
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

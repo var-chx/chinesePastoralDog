@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // while(true){
+    //   var num=100;
+    //   break;
+    // }  
+    // console.log(num);
+    for(var i=0;i<10;i++){
+      console.log(i);
+    }   
+    console.log(i);
+    // 全局变量 
+    var num1=10;
+    // 隐士全局变量
+    // 隐士全局变量能删除  全局变量不能删除
+
+    num2=100;
+    delete num1;
+    delete num2;
+    console.log(num1);
+    // console.log(num2);
+    function f1(){
+      // 局部变量
+      var  num=10;
+    }   
+    // console.log(num);
+    // 匿名函数
+    (function(){
+      console.log('nihao');
+    })();
+    (function (){
+      console.log(123);
+    }());
+    // 局部转全局
+    (function(){
+      var num=10;
+      window.num=num;
+
+    })();
+    console.log(num);
+    (function(a){
+      // console.log(a);
+      var num=60;
+      a.num=num;
+
+
+    })(window);
+    console.log(window.num);
+
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

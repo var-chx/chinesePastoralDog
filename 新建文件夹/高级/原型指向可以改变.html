@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person(age){
+      this.age= age;
+    }
+    原型指向可以改变,先天剑原型的方法,后改变指向,不能调用
+    // 所以 先改变指向,后添加方法,就可以使用了
+    // Person.prototype.eat= function(){
+    //   console.log("我要吃肉");
+
+    // }
+    Person.prototype={
+      // constructor:Person,
+      play:function(){
+        console.log('我喜欢吃红烧肉');
+      }
+    }
+    Person.prototype.eat= function(){
+      console.log("我要吃肉");
+
+    }
+    var per= new Person(10);
+    console.log(per.age);
+    per.eat();
+    per.play();
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

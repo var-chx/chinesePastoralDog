@@ -15,11 +15,14 @@
       height: 100px;
       background-color: red;
       float: left;
-      /* position: absolute; */
-      /* left: 0; */
-      /* margin-top: 10px; */
-      /* top: 76px; */
+      position: absolute;
+      left: 0;
+      margin-top: 10px;
+      
      
+    }
+    button {
+      height: 30px;
     }
   
   
@@ -52,17 +55,32 @@
       clearInterval(node.flag);
       node.flag=setInterval(function(){
         var v1=parseInt(getStyle(node,attr));
-        console.log(v1)
+        // console.log(v1)
         if (v1==target) {
-          alert(1)
+          // alert(1)
           clearInterval(node.flag);
           if(fn!=undefined){
             fn();
           }
           return;
+
+
+
         } else {
-        var v2=v1 +10;
-        node.style[attr]=v2 +'px';
+          var step=(target-v1)/20;
+          if (step>0){
+            step=Math.ceil(step);
+          console.log(step);
+          }else if(step<0){
+            step=Math.floor(step);
+          }
+          
+          
+
+
+        var v1=v1 +step;
+        console.log(v1);
+        node.style[attr]=v1 +'px';
         }
       },speed)
     }
@@ -73,13 +91,21 @@
     btnNode.onclick=function(){
       var f=function(){
         // alert(1);
-        animate(divNode,'top',200,20);
+        animate(divNode,'top',400,20);
       }
       // var f=function(){
       //   animate(divNode,'top',400,20);
       // }
       
-      animate(divNode,'left',600,20,f);
+      animate(divNode,'left',600,20,function(){
+        animate(divNode,'top',400,20,function(){
+          animate(divNode,"left",0,20,function(){
+            animate(divNode,'top',30,20,function(){
+              animate(divNode,'width',600,20);
+            })
+          })
+        })
+      });
     }
   
   

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var obj=new Object();
+    obj.name="小黑";
+    obj.age=23;
+    obj.active=function(){
+      console.log('我是' + this.name);
+    }
+    obj.active();
+    console.log(obj.age);
+
+
+    function Clear(name,fn){
+      this.name=name;
+      this.active=fn;
+    }
+    var obj2=new Clear('bobo',function(){
+      console.log('my name is' +' '+ this.name);
+    })
+    obj2.active();
+
+    function Clear(name,fn){
+      this.name=name;
+      this.active=fn;
+    }
+     
+    var cc=new Clear('bobo',function(){
+      console.log('我是' + this.name);
+    })
+    cc.active();
+
+
+
+    var obj3={
+      name:"小bai",
+      age:34,
+      active:function(){
+        console.log('我是' + this.name);
+    }
+    }
+
+    obj3.active();
+
+
+    
+
+    
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

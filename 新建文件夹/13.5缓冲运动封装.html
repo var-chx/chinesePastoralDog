@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      position: absolute;
+
+
+    }
+  
+  
+  
+  </style>   
+</head>
+<body>
+  <button>开始</button>
+  <div></div>
+
+  <script>
+    var btnNode=document.querySelector('button');
+    var divNode=document.querySelector('div');
+
+    function getStyle(node,obj){
+      var styleNode;
+      if (node.currentStyle){
+        styleNode=node.currentStyle;
+      } else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode[obj];
+      
+    }
+    
+
+
+
+
+    function animate(node,obj,speed){
+      clearInterval(node.flag);
+      node.flag=setInterval(function(){
+        var genuine=true;
+        for (var key in obj) {
+          var v=parseInt(getStyle(node,key));
+          if (v!=obj[key]){
+            genuine=false;
+          }
+          var step=(obj[key]-v)/40;
+          if (step>0){
+            step=Math.ceil(step);
+          } else {
+            step=Math.floor(step);
+          }
+          var v=v +step;
+          node.style[key]=v + 'px';
+          
+
+
+        }
+        if(genuine){
+          clearInterval(node.flag);
+          // if (fn!=undefined){
+          //   fn()
+          // }
+        }
+
+
+      },speed)
+    }
+
+
+    btnNode.onclick=function(){
+      var obj={left:800,height:800,width:800};
+      animate(divNode,obj,20);
+
+    }
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 自定义构造函数
+
+    // js 是d动态类语言如果实力对象和原型重名了 现在实例对象中找  找不到在去原型中找
+    // function Person(age){
+    //   // this.age=age;
+    // }
+    // Person.prototype.age=100;
+    // // var c= new Person(10);
+    // var c= new Person(10);
+    // console.log(c);
+    // console.log(c.age);
+    // console.log(Person.age);
+    // console.dir(c);
+    // console.dir(Person);
+
+
+
+    // 现在实力对象中找.找不到去原型prototype中找  找到不到就是undefined
+    function PersonNi(){
+      // this.like=function(){
+      //   console.log("我真没");
+      // }
+    }
+    PersonNi.prototype.like=function(){
+      console.log("你真丑");
+    }
+    var per= new PersonNi();
+    per.like();
+
+    // 最先修改的是实例对象中的数字
+    function Person3(age){
+      this.age=age;
+    }
+    Person3.prototype.age=100;
+    // 实力
+    var m= new Person3(10);
+    console.log(m.age);
+    m.age=1000;
+    console.log(m.age);
+    console.dir(m);
+    Person3.prototype.age=2000;
+    console.log(m);
+
+
+
+
+     
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

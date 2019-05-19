@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>title</title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: rgb(136, 136, 41);
+    }
+  
+  
+  
+  </style>
+ 
+</head>
+<body>
+  <input type="button"  value="变色" type="text" id="btn">
+  <div id="dv"></div>
+  <script>
+    // function my$(id){
+    //   return document.getElementById(id);
+    // }
+    // my$("btn").onclick=function(){
+    //   // alert("哈哈,我真漂亮");
+    //   my$("dv").style.backgroundColor="red";
+
+    // }
+//     document.getElementById('btn').onclick=function(){
+//       document.getElementById('dv').style.backgroundColor="red"
+// ;
+//     }
+function ChangeColor(btnId,dvId,color){
+  this.btnObj=document.getElementById(btnId);
+  this.divObj=document.getElementById(dvId);
+  this.color=color;
+
+}
+// 添加方法
+ChangeColor.prototype.setBackgroundColor=function(){
+  // this 指的是实例对象
+
+  var divObj1=this.divObj;
+  var color1=this.color;
+  this.btnObj.onclick=function(){
+    divObj1.style.backgroundColor=color1;
+
+  }
+}
+// 实例化对象
+var cc =new ChangeColor("btn","dv","red");
+cc.setBackgroundColor();
+
+function Person(age){
+  this.age=age;
+  console.log(this);
+}
+var r=new Person(10);
+
+
+
+
+    
+  
+  </script>
+  
+</body>
+</html>

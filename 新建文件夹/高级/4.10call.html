@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // function f1(){
+    //   console.log(this);
+    // }
+    // function Person(age){
+    //   this.age = age;
+    // }
+    // var per = new Person(100);
+    // f1.apply(per);
+
+
+
+    // function Person (age){
+    //   this.age = age;
+    // }
+    // Person.prototype.eat = function(){
+    //   console.log('我就是最漂亮的' + this);
+    // }
+    // var per = new Person(100);
+    // per.eat();
+
+    // function Student (sex){
+    //   this.sex = sex;
+    // }
+    // var stu= new Student('男');
+    // per.eat.apply(stu);
+    // per.eat();
+
+
+
+    var str="what are you nosha";
+    var arr=[10,20,30];
+    arr.forEach(function (x,y,z){
+      console.log(x);
+      console.log(y);
+      console.log(z);
+
+    });
+    arr.forEach.call(str,function(x,y,z){
+      console.log(x);
+
+
+    })
+
+
+
+    // function f1 (x,y){
+    //   console.log(x+y);
+    // }
+    // f1(10,20);
+    // f1.call(null,10,20);
+    // function Person (age){
+    //   this.age = age;
+    // }
+    // var per = new Person(100);
+    // f1.call(per,30,50);
+
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

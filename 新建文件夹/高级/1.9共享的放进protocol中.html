@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person (name,age,sex){
+      this.name=name;
+      this.age=age;
+      this.sex=sex;
+    }
+    Person.prototype.like=function(){
+      console.log("中午吃的难吃死了");
+    }
+    var per1=new Person('小明',16);
+    var per2=new Person('小李',45);
+    per1.like();
+    per2.like();
+    console.log(per1.like===per2.like);
+    console.dir(per1);
+    console.dir(per2);
+    console.dir(Person);
+    console.log(per1.__proto__);
+    console.log(Person.prototype);
+    console.log(per1.__proto__===per2.__proto__);
+
+
+ 
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

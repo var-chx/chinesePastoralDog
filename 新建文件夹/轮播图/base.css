@@ -1,0 +1,85 @@
+body,ul,img,span {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* container版心--------------------- */
+.container {
+  width: 1120px;
+  /* background-color: pink; */
+  margin: 0 auto;
+}
+.banner {
+  width: 790px;
+  height: 340px;
+  /* background-color: red; */
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+
+}
+.banner .btn {
+  width: 30px;
+  height: 60px;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.banner .rightBtn {
+  right: 0;
+}
+.banner .btn:hover {
+  background-color: rgba(0,0,0,0.6);
+
+}
+.banner ul {
+  width: 114px;
+  height: 12px;
+  /* background-color: green; */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -57px;
+
+
+}
+.banner  ul li {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  float: left;
+
+}
+.banner  li+li {
+  margin-left: 5px;
+}
+.banner ul li.active {
+  background-color: red;
+}
+.banner .content {
+  width: 6320px;
+  position: absolute;
+
+}
+.banner .content .item {
+  float: left;
+}
+
+
+
+
+
+
+

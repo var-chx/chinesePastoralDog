@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 组合继承 改变原型指向实现继承 借用构造函数继承
+    // 构造函数
+    function Person (name,age){
+      this.name = name;
+      this.age = age;
+
+    }
+    // 原型添加方法
+    Person.prototype.sayHi = function(){
+      console.log('您好,吃了吗?');
+    };
+
+    // 构造函数
+    function Teacher (name,age,sex) {
+      // 借用构造函数实现继承.主要是继承属性
+      Person.call(this,name,age);
+      this.sex = sex;
+    };
+    // 借用改变原型指向实现继承,主要继承的是方法\
+    Teacher.prototype =new Person();
+
+    var tea= new Teacher('小白',34,'女');
+    console.log(tea.name, tea.age, tea.sex);
+    tea.sayHi();
+    var cc=new Teacher ('小红',3,'男');
+    console.log(cc.name, cc.age, cc.sex);
+    cc.sayHi();
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

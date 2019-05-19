@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // var Obj={
+    //   name:"小白",
+    //   age: 34,
+
+
+    // };
+    // // 遍历对象
+    // for (var key in Obj){
+    //   console.log(key);
+    //   console.log (key + '-------------' +Obj[key]);
+    //   // console.log(key +  '-----------------' +Obj.key);错误的
+
+    // }
+    // var obj1= {
+    //   name:'梅超风',
+    //   age: 34,
+    //   sex:'女'
+
+    // }
+    // var obj2 = obj1;
+    // console.dir(obj1);
+    // console.dir(obj2);
+    // var obj2={};
+    // for (var key in obj1){
+    //   obj2[key] = obj1[key];
+    // }
+    // console.dir(obj2);
+
+    function Person (){
+      Person.prototype.age = 10;
+      Person.prototype.sex = '男';
+      Person.prototype.sayHi =function(){
+        console.log('你好');
+      };
+      Person.prototype.eat = function(){
+        console.log('吃');
+      };
+    }
+    var per =new Person();
+    var cc={};
+    for (var key in Person.prototype ){
+      cc[key]= Person.prototype[key];
+    };
+    console.dir(cc)
+  
+
+
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

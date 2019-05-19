@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 动物
+    // 小狗
+    // 哈士奇
+    // 动物构造函数
+    function Animal (name,age) {
+      this.name = name;
+      this.age = age;
+    };
+    Animal.prototype.eat = function(){
+      console.log('一遍吃,一遍看着你');
+    }
+    
+    // 狗 的构造函数
+    function Dog(sex) {
+      this.sex = sex;
+    };
+    Dog.prototype= new Animal('哮天犬',38903);
+    Dog.prototype.eatPerson = function(){
+      console.log('汪~汪~汪~~~~ 你过来,我咬死你');
+    };
+
+    // 哈士奇构造函数\
+    function  ErHa (color) {
+      this.color = color;
+    };
+    ErHa.prototype= new Dog('雄性');
+    ErHa.prototype.eatHouse = function () {
+      console.log('不是我干的 呜呜----------');
+      console.log('酒品不好,就不要喝酒了');
+
+    };
+
+    // 实例化
+    var er =new ErHa( 'red');
+    console.log(er.name, er.age, er.sex, er.color);
+    er.eat();
+    er.eatPerson();
+    er.eatHouse();
+    console.dir(ErHa);
+  
+
+
+
+    
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

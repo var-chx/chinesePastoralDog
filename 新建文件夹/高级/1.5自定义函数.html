@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person(name,age,sex){
+      this.name=name;
+      this.age=age;
+      this.sex=sex;
+      this.sayHi=function(){
+        console.log("你是大砂锅" + this.name);
+
+      }
+      this.eat=function(){
+        console.log(this.name + "红烧排骨");
+      }
+    }
+    // 自定义函数对象使用this代替,不需要return
+    var per=new Person();
+
+    var person1= new Person("小黑",45,"男");
+    person1.eat();
+    person1.sayHi();
+    console.log(person1 instanceof Person);
+    console.log(person1 instanceof Object);
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

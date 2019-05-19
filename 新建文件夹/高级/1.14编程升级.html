@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: rgb(136, 136, 41);
+      }
+    
+    </style>
+</head>
+<body>
+  <input type="button"  value="变色" type="text" id="btn">
+  <div id="dv"></div>
+  <script>
+    // 初级
+  // function ChangeColor(btnId,divId,color){
+  //   this.btnObj=document.getElementById(btnId);
+  //   this.divObj=document.getElementById(divId);
+  //   this.color=color;
+  // }
+  // ChangeColor.prototype.setBackgroundColor=function(){
+  //   // 把this这个实力对象储存到that中
+  //   var that=this;
+  //   that.btnObj.onclick=function(){
+  //     that.divObj.style.backgroundColor = that.color;
+  //   }
+  // }
+  // var cc=new ChangeColor('btn',"dv","green");
+  // cc.setBackgroundColor();
+
+  // 升级版本
+  function ChangeStyle(btnObj,divObj,json){
+    this.btnObj=btnObj;
+    this.divObj=divObj;
+    this.json=json;
+    // console.log(this);
+  }
+  ChangeStyle.prototype.changeAll=function(){
+    var that=this;
+    // console.log(this);
+    // console.log(that);
+    this.btnObj.onclick=function(){
+      // console.log(this);
+      for(var key in that.json){
+        // console.log(that);
+        that.divObj.style[key]=that.json[key];
+      }
+    };
+  };
+  var btnObj=document.getElementById('btn');
+  var divObj=document.getElementById('dv');
+  var json1={
+    "backgroundColor":"green",
+    "width":'500px',
+    "height":'300px',
+    "border":"2px solid red"
+  };
+  var cs=new ChangeStyle(btnObj,divObj,json1);
+  cs.changeAll();
+
+
+
+  
+  </script>
+  
+</body>
+</html>
