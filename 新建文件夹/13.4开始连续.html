@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      float: left;
+      position: absolute;
+      left: 0;
+      margin-top: 10px;
+      
+     
+    }
+    button {
+      height: 30px;
+    }
+  
+  
+  
+  </style>
+</head>
+<body>
+  <button>开始连续</button>
+  <div></div>
+  <script>
+    var btnNode=document.querySelector('button');
+    var divNode=document.querySelector('div');
+
+
+    function getStyle(node,attr){
+      var styleNode;
+      if (node.currentStyle){
+        styleNode=node.currentStyle;
+      }
+      else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode[attr];
+    }
+    var num=getStyle(divNode,'top');
+    console.log(num);
+
+
+    function animate(node,attr,target,speed,fn){
+      clearInterval(node.flag);
+      node.flag=setInterval(function(){
+        var v1=parseInt(getStyle(node,attr));
+        // console.log(v1)
+        if (v1==target) {
+          // alert(1)
+          clearInterval(node.flag);
+          if(fn!=undefined){
+            fn();
+          }
+          return;
+
+
+
+        } else {
+          var step=(target-v1)/20;
+          if (step>0){
+            step=Math.ceil(step);
+          console.log(step);
+          }else if(step<0){
+            step=Math.floor(step);
+          }
+          
+          
+
+
+        var v1=v1 +step;
+        console.log(v1);
+        node.style[attr]=v1 +'px';
+        }
+      },speed)
+    }
+
+
+    
+    // 连续运动 left600 top400 left600 width400
+    btnNode.onclick=function(){
+      var f=function(){
+        // alert(1);
+        animate(divNode,'top',400,20);
+      }
+      // var f=function(){
+      //   animate(divNode,'top',400,20);
+      // }
+      
+      animate(divNode,'left',600,20,function(){
+        animate(divNode,'top',400,20,function(){
+          animate(divNode,"left",0,20,function(){
+            animate(divNode,'top',30,20,function(){
+              animate(divNode,'width',600,20);
+            })
+          })
+        })
+      });
+    }
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

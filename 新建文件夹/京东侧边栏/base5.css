@@ -1,0 +1,56 @@
+body,ul,img {
+  margin: 0;
+  padding: 0;
+
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  background-color: pink;
+
+}
+.sidebar {
+  position: relative;
+}
+.container .sideLeft {
+  width: 190px;
+  background-color: #666;
+  padding: 10px 0;
+
+}
+.container .sideLeft li {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 28px;
+}
+.container .sideLeft a {
+  color: #fff;
+}
+.container .sideLeft a:hover {
+  color: red;
+}
+.container .sideLeft li:hover {
+  background-color: #aaa;
+}
+.sidebar>.sideRight {
+  position: absolute;
+  top: 0;
+  left: 190px;
+
+}
+.sidebar>.sideRight .item{
+  display: none;
+}
+.sidebar>.sideRight .item.active {
+  display: block;
+}
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 构造函数\
+    function Commodity(price,count,describe) {
+      this.price = price;
+      this.count = count;
+      this.describe = describe;
+    };
+    Commodity.prototype.show = function (){
+      console.log('直接展示');
+
+    };
+    function Computer (size) {
+      this.size = size;
+    };
+    // 改变原型实现继承
+    Computer.prototype = new Commodity('100块',20,'棒棒哒');
+    Computer.prototype.playAuto = function(){
+      console.log('好看啊');
+
+    };
+    // 实例对象
+    var cp = new Computer('t420');
+    console.log(cp.price, cp.count, cp.describe, cp.size);
+    cp.show();
+    cp.playAuto();
+
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

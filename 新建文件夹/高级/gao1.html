@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function createObj (name,age,sex){
+      // 创建对象
+      var obj= new Object();
+      // 属相
+      obj.name=name;
+      obj.age=age;
+      obj.sex=sex;
+      // 方法
+      obj.eat=function(){
+        console.log('吃榴莲');
+      }
+      obj.sayHi=function(){
+        console.log('我的名字是' + this.name);
+      }
+      return obj;
+
+    }
+    var i=createObj();
+    console.log(i.name,i.age);
+    var obj2=createObj('小白',90,'男');
+    // obj2.name="小白";
+    // obj2.age=78;
+    console.log(obj2.name,obj2.age);
+
+
+   
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

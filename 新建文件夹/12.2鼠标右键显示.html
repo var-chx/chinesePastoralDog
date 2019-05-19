@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body,ul {
+      margin: 0;
+      padding: 0;
+
+    }
+    .menu {
+      list-style: none;
+      width: 100px;
+      background-color: #666;
+      position: absolute;
+      display: none;
+    }
+
+    .menu.active{
+      display: block;
+    
+    }
+    .menu li {
+      line-height: 30px;
+      color: white;
+      cursor: pointer;
+      padding-left: 10px;
+    }
+    .menu li+li {
+      border-top: 1px solid #e3e4e5;
+    }
+
+    .menu li:hover {
+      background-color: blue;
+      color: red;
+    }
+  
+  </style>
+</head>
+<body>
+  <ul  class='menu'  id="menu">
+    <li>我的信息</li>
+    <li>查看记录</li>
+    <li>收藏</li>
+    <li>关注</li>
+  </ul>
+  <script>
+    var ulNode=document.querySelector('#menu');
+    document.oncontextmenu=function(e){
+      var _e=window.event||e;
+      var x=_e.clientX;
+      var y=_e.clientY;
+      ulNode.style.left=x +'px';
+      ulNode.style.top=y +'px';
+      ulNode.className='menu  active';
+      return false;
+    }
+    document.onclick=function(){
+      ulNode.className="menu";
+    }
+
+
+
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>'

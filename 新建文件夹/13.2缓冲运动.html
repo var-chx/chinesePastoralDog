@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color:red;
+      margin-top: 20px;
+      position: absolute;
+      left: 0;
+      
+    }
+
+  
+  
+  
+  
+  
+  
+  </style>
+</head>
+<body>
+  <button class="btn1">向前</button>
+  <button class="btn2">向后</button>
+  <div></div>
+  <script>
+    var btn1=document.querySelector('.btn1');
+    var btn2=document.querySelector('.btn2');
+    var divNode=document.querySelector('div');
+
+    function getStyle(node,attr){
+      var styleNode;
+      if (node.currentStyle){
+        styleNode=node.currentStyle;
+      }
+      else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode[attr];
+    }
+    // var num=getStyle(divNode,'width');
+    // console.log(num);
+    
+    
+    function animate(node,attr,target,speed){
+      clearInterval(node.flag);
+      node.flag=setInterval(function(){
+        var v1=parseInt(getStyle(node,attr));
+        if (v1==target){
+          clearInterval(node.flag);
+          return;
+        }
+        else {
+          var step=(target-v1)/40;
+          if(step>0){
+            step=Math.ceil(step);
+          }
+          else if(step<0){
+            step=Math.floor(step);
+          }
+          var v2=v1 + step;
+          console.log(v1);
+          console.log(step);
+          console.log(v2);
+          node.style[attr]=v2 +'px';
+        }
+      },speed)
+    }
+
+    btn1.onclick=function(){
+      animate(divNode,'left',513,10);
+
+    }
+    btn2.onclick=function(){
+      animate(divNode,'left',0,10);
+
+    }
+
+  
+  
+  
+  </script>
+  
+</body>
+</html>

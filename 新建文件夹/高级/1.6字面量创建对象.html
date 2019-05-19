@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 第一种方式---------------------
+    // var obj={};
+    // obj.name="小黑";
+    // obj.age=45;
+    // obj.sayHi=function(){
+    //   console.log("萨瓦迪卡" + this.name);
+    // }
+    // obj.sayHi();
+    // 第二种方式------------------------
+    // var obj={
+    //   name:"小黑",
+    //   age:45,
+    //   sayHi:function(){
+    //     console.log("萨瓦迪卡" + this.name);
+    //   }
+      
+    // }
+    // obj.sayHi();
+    // 1 调用系统的构造函数创建对象,通过new的方式
+    var obj =new Object();
+    obj.name="小黑";
+    obj.sayHi=function(){
+      console.log('萨瓦迪卡' + this.name);
+    }
+    obj.sayHi();
+
+    // 2自定义构造函数创建对象
+    function Person(name,age){
+      this.name=name;
+      this.age=age;
+      this.eat=function(){
+        console.log('萨瓦迪卡' + this.name);
+      }
+    }
+    var i=new Person('小黑',45);
+    i.eat();
+    // 3 字面量的方式
+    var obj2={
+      name:"小黑",
+      age:89,
+      like:function(){
+        console.log(this.name + "萨瓦迪卡" +this.age);
+      }
+    
+    }
+    obj2.like();
+
+
+    
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

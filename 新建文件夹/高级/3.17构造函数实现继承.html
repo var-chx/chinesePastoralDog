@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person (name,age){
+      this.name = name;
+      this.age = age;
+    };
+    Person.prototype.eat = function (){
+      console.log ('吃大蒜');
+    };
+
+    function Student (name,age,sex) {
+      Person.call(this,name,age);
+      console.log(this);
+    
+      this.sex = sex;
+    };
+    var stu=new Student('小明',23,'男');
+    console.log(stu.name, stu.age, stu.sex);
+    var stu1=new Student('小李',34,'女');
+    console.log(stu1.name, stu1.age, stu1.sex);
+
+
+
+
+
+    // Student.prototype = new Person()
+
+
+    // Student.prototype  = new Person ("小黑", 45);
+    // var stu1 = new Student('男');
+    // stu1.name= '小白';
+    // stu1.age=67;
+    // stu1.sex= '女';
+    // var stu2 = new Student('男');
+    // console.log (stu1.name, stu1.age, stu1.sex);
+    // console.log(stu2.name, stu2.age, stu2.sex);
+    // for (var i= 0 ; i<5; i++) {
+    //   console.log(stu1.name, stu1.age, stu1.sex);
+    // }
+  
+    
+  
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

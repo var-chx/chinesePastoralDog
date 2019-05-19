@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+  
+  
+  
+  
+  </style>
+</head>
+<body>
+  <button>绑定</button>
+  <button>解绑</button>
+  <div></div>
+  <script>
+    // 传统方式解绑
+    var btnNode=document.querySelectorAll('button')[0];
+    var bNode=document.querySelectorAll('button')[1];
+    var divNode=document.querySelector('div');
+    btnNode.onclick=function(){
+      divNode.onclick=function(){
+        alert(1);
+      }
+    }
+    bNode.onclick=function(){
+      divNode.onclick=null;
+
+      }
+    
+
+    
+  
+  
+  
+  </script>
+  
+</body>
+</html>

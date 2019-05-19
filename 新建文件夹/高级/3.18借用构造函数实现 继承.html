@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 借用构造函数的时候,属性被继承了,方法并没有被继承
+    function Animal(age){
+      this.age = age;
+    };
+    // 原型添加方法
+    Animal.prototype.sayHi = function(){
+      console.log('猪脚是女的吗');
+    }
+    // 构造函书
+    function Cat (age,sex) {
+      Animal.call(this,age);
+      this.sex=sex;
+
+    };
+    // 实例化对象
+    var cat=new Cat(3,'雄');
+    console.log(cat.age, cat.sex);
+    cat.sayHi();
+    
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var arr=[
+      function (){
+        console.log('你好啊');
+      },
+      function (){
+        console.log('他好啊');
+      },
+      function (){
+        console.log('我也好啊');
+      }
+    ];
+
+    // for  (var i=0; i<arr.length; i++){
+    //   arr[i]();
+    // }
+    // var arr=[10,20,30]
+    arr.forEach(function(x,y){
+      // console.log('哈哈哈');
+      // console.log(arguments.length);
+      // 第一个参数 :元素的值
+      // 第二个参数 :下标
+      // 第三个参数: 谁调用挂了foreach
+
+      // console.log(x);
+    //   console.log(y);
+    //   console.log(z);
+    x();
+   
+    })
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

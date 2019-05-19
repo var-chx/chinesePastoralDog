@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // function f1 (x,y){
+    //   return x + y;
+    // }
+    // var result= f1(20,100);
+    // console.log(result);
+    // var result=f1.call(null,10,20);
+    // console.log(result);
+  
+
+    // function Person(age){
+    //   this.age = age;
+    // }
+    // Person.prototype.eat = function(x,y ){
+    //   console.log('吃东西');
+    //   return x +y;
+    // };
+    // var per =new Person(10);
+    // var obj={};
+    // var result= per.eat.call(obj,3,4);
+    // console.log(result);
+
+
+
+    function Person(age){
+      this.age = age;
+    }
+    Person.prototype.eat = function(x,y ){
+      console.log('吃东西');
+      return x +y;
+    };
+    var per =new Person(10);
+    var obj={};
+    var result= per.eat.apply(obj,[3,4]);
+    console.log(result);
+
+   
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

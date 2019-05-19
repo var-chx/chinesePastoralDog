@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person(age){
+      // this.age=age;
+      
+    }
+    // Person.prototype.name="小白";
+    // Person.prototype.age='10';
+    // Person.prototype.sex="男";
+    // Person.prototype.height='188';
+    // Person.prototype.like=function(){
+    //   console.log('你好' + this.name);
+    // }
+    // Person.prototype.eat=function(){
+    //   console.log("烤红薯");
+    // }
+    Person.prototype={
+      constructer:Person,
+      name:"小白",
+      sex:"男",
+      height:"188",
+      like:function(){
+        consoel.log("nihao ");
+      },
+      eat:function(){
+        console.log("吃啥");
+      }
+    }
+
+    var cc=new Person(100);
+
+
+    console.log(cc.height,cc.name,cc.sex);
+    cc.eat();
+    console.dir(cc);
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

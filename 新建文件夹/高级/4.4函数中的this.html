@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 普通函数中的this是谁  window
+    // 实力函数中得到this
+    // 原型对象中的this
+    // 构造函数中的this
+    // 定时器中的this
+    // 事件中的this
+    // 普通构造函数中的this
+    // "use strict"; 严格模式
+    function f1() {
+      console.log(this);
+    }
+    f1();
+    // window 是浏览器的顶级对象
+    // document是页面的顶级对象
+    // 页面中的js代码所有的东西都是window的
+    var num=10;
+    console.log(window.num);
+    // 'use strict';
+    function f2(){
+      console.log('您好啊' +this);
+    }
+    window.f2();
+
+
+    
+    function Person(age){
+      this.age = age;
+      console.log(this);
+      this.like = function(){
+        console.log(this);
+      }
+    }
+    var per = new Person(20);
+    console.log(per);
+    per.like();
+    // 构造函数中的this指的是当前的实力对象
+    // setInterval(function (){
+    //   console.log(this);
+
+    // },100);
+
+
+    
+
+
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  <p id="p1">声明</p>
+  <script>
+    document.getElementById('p1').onclick = function(){
+      console.log('啦啦啦' + this);
+    }
+  
+  
+  
+  </script>
+  
+</body>
+</html>

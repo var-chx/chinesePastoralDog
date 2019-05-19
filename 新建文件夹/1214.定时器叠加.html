@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: absolute;
+      margin-top: 100px;
+    }
+  
+  
+  
+  </style>
+</head>
+<body>
+  <button>开始</button>
+  <div></div>
+  <script>
+    var btnNode=document.querySelector('button');
+    var divNode=document.querySelector('div');
+    var step=10;
+    var target=400;
+    var flag;
+
+    btnNode.onclick=function(){
+      clearInterval(flag);
+      flag=setInterval(function(){
+        var v1=divNode.offsetLeft;
+        var v2=v1 +step;
+        divNode.style.left=v2 +'px';
+        if (v2== target){
+          clearInterval(flag);
+        }
+
+
+
+      },10)
+
+
+      
+
+
+    }
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

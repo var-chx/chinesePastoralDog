@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 函数中如果有return  ,该函数就又返回值
+    // 函数没有return, 该函数就没有返回值, 但是接受了 救过就是undefined
+    // 函数中有return , 但是return 后面没有任何内容, 也没有返回值所以结果是undefinde;
+
+    // 有返回值
+    // function f1(){
+    //   return 100;
+    // }
+    // 没有返回值
+    function f1(){
+      console.log('您好');
+      console.log('美美哒');
+      return ;
+      // return 就是结束,后面的代码不执行
+      console.log('我是不是很美');
+    }
+    var result= f1();
+    console.log(result);
+    
+
+
+    function Person(){
+       this.sayHi =function (){
+        console.log('您好');
+      };
+    }
+    var per = new Person();
+    var result=per.sayHi();
+    console.log(result);
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

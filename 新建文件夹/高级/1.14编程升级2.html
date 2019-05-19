@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(46, 46, 26);
+
+    }
+  
+  
+  
+  </style>
+</head>
+<body>
+  <input type="button" type="text"  value="变化" id="btn">
+  <div id="dv"></div>
+  <script>
+    var btnNode=document.getElementById('btn');
+    var divNode=document.getElementById('dv');
+    function ChangeStyle(btnN,divN,json){
+      this.btnN=btnN;
+      this.divN=divN;
+      this.json=json;
+      console.log(this.json);
+    }
+      
+    ChangeStyle.prototype.changeAll=function(){
+      var that=this;
+      this.btnN.onclick=function(){
+        for(var key in that.json){
+          that.divN.style[key]=that.json[key];
+        }
+      }
+    }
+    var json1={
+      "backgroundColor":"red",
+      "width":"500px",
+      "height":"600px",
+      'border':'2px solid green'
+    }
+
+
+    var cc=new ChangeStyle(btnNode,divNode,json1);
+    cc.changeAll();
+
+
+    
+
+  
+  
+  
+  
+  
+  
+  </script>
+  
+</body>
+</html>

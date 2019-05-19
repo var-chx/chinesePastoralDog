@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 动物 名字,年龄,有跑的行为
+    // 猫 名字 ,年龄,性别,跑的行为,抓耗子的行为
+
+    // 动物的构造函数
+    // function Animal(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // };
+    // Animal.prototype.run = function () {
+    //   console.log('动物跑了');
+
+    // };
+
+    // // 猫的构造函数
+    // function Cat (name,age,sex){
+    //   this.name=name;
+    //   this.age = age;
+    //   this.sex = sex;
+    // };
+    // Cat.prototype.run = function(){
+    //   console.log( this.name + '动物跑了');
+    // };
+    // Cat.prototype.catchMouse= function (){
+    //   console.log('往哪里跑');
+    // };
+    // var cat = new Cat ('小黑',2,'女');
+    // cat.run();
+    // cat.catchMouse();
+
+      // 继承性
+
+    function Animal(name,age){
+      this.name = name;
+      this.age = age;
+    };
+    Animal.prototype.run = function () {
+      console.log( this.name + ', 动物跑了');
+
+    };
+
+    // 猫的构造函数
+    function Cat (sex){
+      this.sex = sex;
+    };
+    // 继承关系
+    Cat.prototype = new Animal('小黑',2);
+    // 原型添加方法
+    Cat.prototype.catchMouse= function (){
+      console.log('往哪里跑,小黑,抓他');
+    };
+    var cat = new Cat ('女');
+    cat.run();
+    cat.catchMouse();
+
+
+  
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

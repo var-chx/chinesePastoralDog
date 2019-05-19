@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li {
+      background-color: red;
+      margin: 10px 0;
+    }
+  
+  </style>
+</head>
+
+<body>
+    <button>添加</button>
+    <ul>
+      <li>我是li1</li>
+      <li>我是li2</li>
+      <li>我是li3</li>
+      <li>我是li4</li>
+      <li>我是li5</li>
+      <li>我是li6</li>
+      <li>我是li7</li>
+      <li>我是li8</li>
+      <li>我是li9</li>
+      <li>我是li10</li>
+      <li>我是li11</li>
+      <li>我是li12</li>
+      <li>我是li13</li>
+      <li>我是li14</li>
+      <li>我是li15</li>
+      <li>我是li16</li>
+      <li>我是li17</li>
+      <li>我是li18</li>
+      <li>我是li19</li>
+      <li>我是li20</li>
+      <li>我是li21</li>
+      <li>我是li22</li>
+      <li>我是li23</li>
+      <li>我是li24</li>
+      <li>我是li25</li>
+      <li>我是li26</li>
+      <li>我是li27</li>
+      <li>我是li28</li>
+      <li>我是li29</li>
+      <li>我是li30</li>
+      <li>我是li31</li>
+      <li>我是li32</li>
+      <li>我是li33</li>
+      <li>我是li34</li>
+      <li>我是li35</li>
+      <li>我是li36</li>
+      <li>我是li37</li>
+      <li>我是li38</li>
+      <li>我是li39</li>
+      <li>我是li40</li>
+      <li>我是li41</li>
+      <li>我是li42</li>
+      <li>我是li43</li>
+      <li>我是li44</li>
+      <li>我是li45</li>
+      <li>我是li46</li>
+      <li>我是li47</li>
+      <li>我是li48</li>
+      <li>我是li49</li>
+      <li>我是li50</li>
+      <li>我是li51</li>
+      <li>我是li52</li>
+      <li>我是li53</li>
+      <li>我是li54</li>
+      <li>我是li55</li>
+      <li>我是li56</li>
+      <li>我是li57</li>
+      <li>我是li58</li>
+      <li>我是li59</li>
+      <li>我是li60</li>
+      <li>我是li61</li>
+      <li>我是li62</li>
+      <li>我是li63</li>
+      <li>我是li64</li>
+      <li>我是li65</li>
+      <li>我是li66</li>
+      <li>我是li67</li>
+      <li>我是li68</li>
+      <li>我是li69</li>
+      <li>我是li70</li>
+      <li>我是li71</li>
+      <li>我是li72</li>
+      <li>我是li73</li>
+      <li>我是li74</li>
+      <li>我是li75</li>
+      <li>我是li76</li>
+      <li>我是li77</li>
+      <li>我是li78</li>
+      <li>我是li79</li>
+      <li>我是li80</li>
+      <li>我是li81</li>
+      <li>我是li82</li>
+      <li>我是li83</li>
+      <li>我是li84</li>
+      <li>我是li85</li>
+      <li>我是li86</li>
+      <li>我是li87</li>
+      <li>我是li88</li>
+      <li>我是li89</li>
+      <li>我是li90</li>
+      <li>我是li91</li>
+      <li>我是li92</li>
+      <li>我是li93</li>
+      <li>我是li94</li>
+      <li>我是li95</li>
+      <li>我是li96</li>
+      <li>我是li97</li>
+      <li>我是li98</li>
+      <li>我是li99</li>
+      <li>我是li100</li>
+    </ul>
+    <script>
+      /*
+      事件委托
+      就是把子元素的事件绑定全部委托给一个父元素
+      */
+      var lisNode=document.querySelectorAll('li');
+      var btnNode=document.querySelector('button');
+      var ulNode=document.querySelector('ul');
+      ulNode.onclick=function(e){
+        var _e=window.event||e;
+        console.dir(_e.target);
+        // srcElement兼容IE _e.target 兼容谷歌
+          _e.target=_e.srcElement||_e.target;
+        if(_e.target.tagName.toLowerCase()=='li'){
+          alert(_e.target.innerHTML);
+        }
+      }
+      btnNode.onclick=function(){
+        var li =document.createElement('li');
+        li.innerHTML=Math.random();
+        ulNode.appendChild(li);
+      }
+      
+    </script>
+</body>
+  
+
+</html>

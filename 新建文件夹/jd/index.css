@@ -1,0 +1,55 @@
+body,ul,li {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* 样式------------------------------------ */
+.container {
+  width: 1120px;
+  
+  margin: 0 auto;
+}
+.sidebar {
+  position: relative;
+}
+.sidebar .sideLeft{
+  width: 190px;
+  background-color: #666;
+  padding: 10px 0;
+}
+.sidebar .sideLeft li {
+  padding-left: 20px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.sidebar .sideLeft li a{
+  color: #fff;
+}
+.sidebar>.sideLeft li a:hover {
+  color: red;
+  
+}
+.sidebar .sideLeft li.active {
+  background-color: #aaa;
+}
+
+.sideRight {
+  position: absolute;
+  top: 0;
+  left: 190px;
+  
+  
+}
+.sideRight .item {
+  display: none;
+}
+.sideRight .item.active {
+  display: block;
+}
+

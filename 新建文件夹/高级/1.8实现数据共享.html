@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person(name,age){
+      this.name=name;
+      this.age=age;
+      // this.sayHi=function(){
+      //   console.log("船前明月光");
+      // }
+    }
+    Person.prototype.sayHi=function(){
+      console.log('窗前明月光');
+    }
+    var obj1=new Person("小黑",45);
+    var obj2= new Person('小明',34);
+    obj1.sayHi();
+    obj2.sayHi();
+    console.log(obj1.sayHi===obj2.sayHi);
+    console.dir(obj1);
+    console.dir(obj2);
+    console.dir(Person);
+
+
+
+
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

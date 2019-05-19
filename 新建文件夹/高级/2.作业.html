@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 系统方式创建对象
+    var bobo=new Object();
+    bobo.name="bobo";
+    bobo.age=45;
+    bobo.hobby="running"
+    bobo.active=function(){
+      console.log(this.name  + ' like '  + this.hobby +this.age + '岁');
+    }
+    bobo.active();
+
+
+    // 自定义创建对象
+    function Person(name,age,occupation){
+      this.name=name;
+      this.age=age;
+      this.occupation=occupation;
+      this.active=function(){
+        console.log(this.name + this.occupation + this.age + "岁");
+      }
+
+    }
+    var cc=new Person("小黑",34,"护士");
+    cc.active();
+    // 字面量创建对象
+    var bobo3={
+      name:"小白",
+      age:54,
+      active:function(){
+        console.log(this.name + this.age);
+      }
+    }
+    bobo3.active();
+    
+
+
+    var student=new Object();
+    student.name="max";
+    student.age=45;
+    student.gender="男";
+
+
+    console.log(student);
+    function Student2(name,age,gender){
+      this.name=name;
+      this.age=age;
+      this.gender=gender;
+    }
+
+    var Ton=new Student2('Ton',34,"女");
+    console.log(Ton);
+    var liu={
+      name:"liu",
+      age:45,
+      gender:"男"
+    }
+    console.log(liu);
+
+
+
+
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person( age){
+      this.age=age;
+    }
+    Person.prototype.like=function(){
+      console.log("吃面");
+    }
+    Person.prototype.eat=function(){
+      console.log("吃酸");
+      this.like();
+
+    }
+      
+      var per=new Person(10);
+      // per.like();
+      per.eat();
+      
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

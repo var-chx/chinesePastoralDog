@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person (name,age){
+      this.name=name;
+      this.age=age;
+      this.eat=function(){
+        console.log("您吃了吗");
+      }
+    }
+    Person.prototype.sayHi=function(){
+      console.log("萨瓦迪卡");
+    }
+    // 实例化
+    var per=new Person("小黑",34);
+    console.log(per.name,per.age);
+    per.eat();
+    console.dir(per);
+    console.dir(Person);
+    var str="你好甩";
+    str=str.replace("好","不好");
+    console.log(str);
+
+
+
+    // var arr=[10,23,34,45,66,66,466,89];
+    // arr.sort(function(a,b){
+    //   if(a>b){
+    //     return 1;
+    //   } else if(a==b){
+    //     return 0;
+    //   } else {
+    //     return -1;
+    //   }
+    // })
+    String.prototype.sayHi=function(){
+      console.log('haha,您好啊');
+    }
+    var str="小黑";
+    str.sayHi();
+    var m="kdkkdk ";
+    m.sayHi();
+    Array.prototype.eat=function(){
+      console.log('z真好吃');
+    };
+    [].eat();
+
+
+    String.prototype.replace=function(){
+      console.log("就这样了");
+    }
+    var str="小样好帅";
+    str.replace();
+    console.log(str);
+
+
+    String.prototype.play=function(){
+      console.log('我在玩王者农药');
+    }
+    var a="";
+    a.play();
+    console.log(a);
+
+
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

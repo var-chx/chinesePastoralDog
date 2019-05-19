@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body ,img  {
+      padding: 0;
+      margin: 0;
+      background-color: black;
+    }
+    
+    img {
+      position: absolute;
+      width: 200px;
+      top: 0;
+      left: 0;
+
+    }
+    img.active {
+      transform: rotateY(180deg);
+    }
+    img.box {
+      transform: rotateX(180deg);
+    }
+   
+
+  
+  
+  </style>
+</head>
+<body>
+  <img src="xiaoniao.png" id="photo" class="active" class="box" alt="">
+  <script>
+    function getStyle (node){
+      var styleNode;
+      if (node.currentStyle!=undefined){
+        styleNode=node.currentStyle;
+        
+      }
+      else {
+        styleNode=getComputedStyle(node,null);
+      }
+      return styleNode;
+    }
+    var imgNode=document.querySelector('#photo');
+    var step=10;
+    document.onkeydown=function(e){
+      
+        var _e=window.event||e;
+        // alert(_e.keyCode);
+    switch ( _e.keyCode ){
+      case 37:
+      // alert("左");
+      imgNode.className="active";
+      var styleNode=getStyle(imgNode);
+      var currentLeft=parseInt(styleNode.left);
+      imgNode.style.left=currentLeft-step +'px';
+
+
+      break;
+      case 38:
+      imgNode.className="box";
+      // alert("上");
+      var styleNode=getStyle(imgNode);
+      var currentTop=parseInt(styleNode.top);
+      imgNode.style.top=currentTop -step +"px";
+      break;
+      case 39:
+      // alert("右");
+      // 转方向
+        imgNode.className="";
+        var styleNode=getStyle (imgNode);
+        // 测试
+        // alert(styleNode.left);
+        var currentLeft=parseInt(styleNode.left);
+        // alert(currentLeft);
+        imgNode.style.left=currentLeft+step +'px';
+
+
+      break;
+      case 40:
+      // alert("下");
+      imgNode.className="circle";
+      var styleNode=getStyle(imgNode);
+      var currentTop=parseInt(styleNode.top);
+      imgNode.style.top=currentTop+step +'px';
+      break;
+    }
+    }
+
+    
+  
+  
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Phone (size,color){
+      this.color = color;
+      this.size = size;
+    };
+    Phone.prototype.call = function(){
+      console.log('哇,小李啊');
+
+    };
+    Phone.prototype.sendMessage = function(){
+      console.log('发短信,10086');
+    };
+    Phone.prototype.lookAvi = function (){
+      console.log('真好看,就是网速太卡');
+    };
+
+
+
+
+    // 苹果的构造函数
+    function Iphone (size,color,weight ){
+      // 构造函数继承,继承属性
+      Phone.call(this,size,color);
+      this.weight = weight ;
+    };
+    // 改变原型指向
+    // 通过原型添加方法  继承方法
+    Iphone.prototype = new Phone();
+    
+    Iphone.prototype.zhiwen = function(){
+      console.log('指纹识别');
+    };
+    // 华为手机
+    function HuaWei (size,color,price){
+      Phone.call(this,size,color);
+      this.price = price;
+    };
+    // 通过改变原型指向.继承方法
+    HuaWei.prototype = new Phone();
+    HuaWei.prototype.LookFace = function(){
+      console.log('脸部识别');
+    };
+    // 小米手机
+    function Smallmi (size,color) {
+      Phone.call(this,size,color);
+    }
+    Smallmi.prototype = new Phone();
+    // 锤子手机
+    function Chuizi(size,color,name) {
+      Phone.call(this,size,color);
+      this.name = name;
+
+    }
+    Chuizi.prototype =new Phone();
+    Chuizi.prototype.call= function(){
+      console.log('我就这么打电话');
+    }
+    var aa= new HuaWei(12,'red',2000);
+    aa.LookFace();
+
+
+
+
+
+
+    
+
+    
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

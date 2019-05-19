@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 构造函数-----------函数
+    function Person(name,age){
+      this.name=name;
+      this.age = age;
+
+
+    }
+    // 实例化对象
+    var Per = new Person("小明",45);
+    console.dir(Per);
+    console.dir(Person);
+    
+
+    console.log(Per.__proto__===Person.prototype);
+    console.log(Person.__proto__===Function.prototype);
+    console.dir(Object);
+
+    // function f1 (){
+
+    // }
+    // console.dir(f1);
+
+  
+  
+  
+  
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>

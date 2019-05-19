@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 电子设备 类别,型号,重量,玩的行为
+    // 手机  类别,型号,重量,价格,玩的行为,打电话,发短信,聊QQ,看电视
+    // 电子设备构造函数
+    function Divice (size,weight) {
+      this.size = size;
+      this.weight = weight;
+    };
+    Divice.prototype.play = function (){
+      console.log('您来玩啊');
+
+    }
+    Divice.prototype.sayQQ = function  () {
+      console.log('在吗');
+    };
+    function Phone( price){
+      this.price = price;
+    };
+    Phone.prototype = new Divice( '84333','50kg');
+    Phone.prototype.call= function (){
+      console.log('需要服务吗');
+    };
+    Phone.prototype.sendMessage= function (){
+      console.log('有时间吗');
+    };
+    
+   
+    // 实例化对象
+    var phone = new Phone ('1000元');
+    console.log(phone.size,phone.weight,phone.price);
+
+    phone.play();
+    phone.call();
+    phone.sendMessage();
+    phone.sayQQ();
+    
+
+
+
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

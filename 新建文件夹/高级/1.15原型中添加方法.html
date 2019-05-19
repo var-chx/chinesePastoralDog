@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person (name,age){
+      this.name=name;
+      this.age=age;
+    }
+    Person.prototype.height=188;
+    Person.prototype.eat=function(){
+      console.log("吃东西" + this.name);
+    }
+    Person.prototype.sayHi=function(){
+      console.log('您好' + this.age);
+    }
+
+    // 实例化
+    var cc= new Person("xiaohei ",45);
+    cc.eat();
+    cc.sayHi();
+    console.log(cc.height);
+    console.dir(cc);
+    console.dir(Person);
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

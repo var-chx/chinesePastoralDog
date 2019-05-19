@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function f1(x,y){
+      console.log( this.age + (x + y));
+    };
+    // f1();
+
+   
+    // console.dir(Function);
+    function Person (age){
+      this.age = age;
+    }
+    var per = new Person(10000);
+    f1.call(per,10,20);
+      f1.apply(per,[10,20]);
+  
+   f1.call(per,10,20);
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

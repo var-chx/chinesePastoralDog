@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Person(name,age){
+      this.name=name;
+      this.age=age;
+      this.like=function(){
+        console.log(4);
+      }
+      this.sayHi=function(){
+        console.log("您吉祥,吃了吗?");
+      }
+    }
+    var i= new Person("小黑",56);
+    var m= new Person('小黑',56);
+
+    i.sayHi();
+    m.sayHi();
+    console.log(i===m);
+    console.dir(i);
+    console.dir(m);
+    console.dir(Person);
+    console.log(i.sayHi===m.sayHi);
+
+    
+  
+  
+  
+  
+  
+  
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
